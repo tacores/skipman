@@ -19,30 +19,35 @@ namespace skipman
 
         public string album
         {
-            get;
-            set;
+            get { return tagFile.Tag.Album; }
+            set { tagFile.Tag.Album = value;  }
         }
 
         public uint disk
         {
-            get;
-            set;
+            get { return tagFile.Tag.Disc; }
+            set { tagFile.Tag.Disc = value; }
         }
         public uint diskCount
         {
-            get;
-            set;
+            get { return tagFile.Tag.DiscCount; }
+            set { tagFile.Tag.DiscCount = value; }
         }
 
         public uint track
         {
-            get;
-            set;
+            get { return tagFile.Tag.Track; }
+            set { tagFile.Tag.Track = value; }
         }
         public uint trackCount
         {
-            get;
-            set;
+            get { return tagFile.Tag.TrackCount; }
+            set { tagFile.Tag.TrackCount = value; }
+        }
+
+        public void save()
+        {
+            tagFile.Save();
         }
 
         private TagLib.File tagFile;

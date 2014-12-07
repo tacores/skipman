@@ -5,7 +5,7 @@ using System.Text;
 
 namespace skipman
 {
-    class Disc
+    public class Disc
     {
         public Disc(uint disk, uint trackCount)
         {
@@ -19,9 +19,9 @@ namespace skipman
             tracks[track - 1] = new Track(track, name, path);
         }
 
-        public Track getTrack(uint index)
+        public Track getTrack(uint track)
         {
-            return tracks[index];
+            return tracks[track - 1];
         }
 
         public uint trackCount

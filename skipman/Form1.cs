@@ -115,7 +115,7 @@ namespace skipman
                 for (uint j = 0; disc != null && j < disc.trackCount; ++j)
                 {
                     Track track = disc.getTrack(j);
-                    dataGridViewDetail.Rows.Add(disc.disk, track.oldTrackNum, track.name);
+                    dataGridViewDetail.Rows.Add(disc.disk, track.track, track.name);
                 }
             }
         }

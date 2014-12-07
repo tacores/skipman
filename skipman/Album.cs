@@ -5,7 +5,7 @@ using System.Text;
 
 namespace skipman
 {
-    class Album
+    public class Album
     {
         public Album(string title, uint discCount)
         {

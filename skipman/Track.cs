@@ -5,11 +5,11 @@ using System.Text;
 
 namespace skipman
 {
-    class Track
+    public class Track
     {
         public Track(uint track, string name, string path)
         {
-            oldTrackNum = track;
+            this.track = track;
             this.name = name;
             this.path = path;
         }
@@ -26,12 +26,10 @@ namespace skipman
             set;
         }
 
-        public uint oldTrackNum
+        public uint track
         {
             get;
             set;
         }
-
-        uint newTrackNum;
     }
 }

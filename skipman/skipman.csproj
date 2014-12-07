@@ -50,7 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Album.cs" />
+    <Compile Include="AlbumDictionaryCreatorImpl.cs" />
+    <Compile Include="AlbumListCreator.cs" />
     <Compile Include="Disc.cs" />
+    <Compile Include="FileSystem.cs" />
+    <Compile Include="FileSystemImpl.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

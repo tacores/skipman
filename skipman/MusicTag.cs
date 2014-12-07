@@ -34,5 +34,7 @@ namespace skipman
             get;
             set;
         }
+
+        void save();
     }
 }
