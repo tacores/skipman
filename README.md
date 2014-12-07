@@ -9,11 +9,12 @@ NW-ZX1‚Å‚ÍA•¡”–‡ƒAƒ‹ƒoƒ€‚ğÄ¶‚·‚é‚Æ‚«A1–‡–Ú‚Ìƒgƒ‰ƒbƒN1A2–‡–Ú‚Ìƒgƒ‰ƒbƒN1A1–
 ‚È‚¨A‚±‚ÌƒAƒvƒŠ‚ÍuƒAƒ‹ƒoƒ€‚Ìƒ^ƒCƒgƒ‹–¼v‚Ìˆê’v‚Å“¯ˆê‚ÌƒAƒ‹ƒoƒ€‚Æ”»’f‚µ‚Ü‚·BˆÙ‚È‚éƒA[ƒeƒBƒXƒg‚Å“¯–¼‚ÌƒAƒ‹ƒoƒ€‚ª“ü‚Á‚Ä‚¢‚éê‡A‚©‚¦‚Á‚Ä•s©‘R‚ÈŒ‹‰Ê‚É‚È‚é‰Â”\«‚ª‚ ‚è‚Ü‚·B
 
 # g—p•û–@
-1. WindowsPC‚ÉANW-ZX1‚ğUSBƒ}ƒEƒ“ƒgON‚Ìó‘Ô‚ÅÚ‘±‚µ‚Ü‚·B
-2. skipman.exe‚ğƒ_ƒuƒ‹ƒNƒŠƒbƒN‚µ‚Ä‹N“®‚µ‚Ü‚·B
-3. uƒXƒLƒƒƒ“vƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚Ü‚·BƒXƒLƒƒƒ“‚É‚Í”•ªˆÈã‚ÌŠÔ‚ª‚©‚©‚é‚Ì‚Å‹C’·‚É‘Ò‚Á‚Ä‚­‚¾‚³‚¢B
-4. •¡”–‡ƒAƒ‹ƒoƒ€‚Æv‚í‚ê‚éƒAƒ‹ƒoƒ€‚ªˆê——•\¦‚³‚ê‚Ü‚·BƒAƒ‹ƒoƒ€‚ğ‘I‘ğ‚·‚é‚ÆA‰º‚Ì—“‚É‹È‚ª•\¦‚³‚ê‚Ü‚·B
-5. u‘I‘ğ‚µ‚½ƒAƒ‹ƒoƒ€‚ğÄÌ”Ôv‚Ü‚½‚Íu¶‚Ì‘SƒAƒ‹ƒoƒ€‚ğÄÌ”Ôvƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚Ü‚·B
+1. [release](http://github.com/tacores/skipman/releases)‚©‚çƒoƒCƒiƒŠ‚ğƒ_ƒEƒ“ƒ[ƒh‚µ‚Ü‚·B
+2. WindowsPC‚ÉANW-ZX1‚ğUSBƒXƒgƒŒ[ƒWON‚Ìó‘Ô‚ÅÚ‘±‚µ‚Ü‚·B
+3. skipman.exe‚ğƒ_ƒuƒ‹ƒNƒŠƒbƒN‚µ‚Ä‹N“®‚µ‚Ü‚·B
+4. uƒXƒLƒƒƒ“vƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚Ü‚·BƒXƒLƒƒƒ“‚É‚Í”•ªˆÈã‚ÌŠÔ‚ª‚©‚©‚é‚Ì‚Å‹C’·‚É‘Ò‚Á‚Ä‚­‚¾‚³‚¢B
+5. •¡”–‡ƒAƒ‹ƒoƒ€‚Æv‚í‚ê‚éƒAƒ‹ƒoƒ€‚ªˆê——•\¦‚³‚ê‚Ü‚·BƒAƒ‹ƒoƒ€‚ğ‘I‘ğ‚·‚é‚ÆA‰º‚Ì—“‚É‹È‚ª•\¦‚³‚ê‚Ü‚·B
+6. u‘I‘ğ‚µ‚½ƒAƒ‹ƒoƒ€‚ğÄÌ”Ôv‚Ü‚½‚Íu¶‚Ì‘SƒAƒ‹ƒoƒ€‚ğÄÌ”Ôvƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚Ü‚·B
 
 # ŠÂ‹«
 ## ÀsŠÂ‹«
@@ -24,9 +25,10 @@ Visual Studio 2010ˆÈ~A.NET Framework4B
 QÆİ’è‚Å[TagLib#](http://github.com/mono/taglib-sharp)‚Ìutaglib-sharp.dllv‚ÌQÆ‚ğ’Ç‰Á‚·‚é•K—v‚ª‚ ‚è‚Ü‚·B
 
 # ƒ‰ƒCƒZƒ“ƒX
-skipman‚ÍMITƒ‰ƒCƒZƒ“ƒX‚Å‚·B  
-“¯«‚ÌuLICENSEv‚ğQÆ‚µ‚Ä‚­‚¾‚³‚¢B
+skipman‚ÍMITƒ‰ƒCƒZƒ“ƒX‚Å‚·B“¯«‚ÌuLICENSEv‚ğQÆ‚µ‚Ä‚­‚¾‚³‚¢B  
+This software is released under the MIT License, see LICENSE.
 
 # g—pƒ‰ƒCƒuƒ‰ƒŠ
 ƒ^ƒOî•ñ‚Ì“Ç‚İ‘‚«‚É[TagLib#](http://github.com/mono/taglib-sharp)‚ğg—p‚µ‚Ä‚¢‚Ü‚·B  
-uTagLib#v‚Ìƒ‰ƒCƒZƒ“ƒX‚ÍLGPL2.1‚Å‚·B“¯«‚ÌuCOPYING.txtv‚ğQÆ‚µ‚Ä‚­‚¾‚³‚¢B
+uTagLib#v‚Ìƒ‰ƒCƒZƒ“ƒX‚ÍLGPL2.1‚Å‚·BƒŠƒŠ[ƒX‚É“¯«‚ÌuCOPYING.txtv‚ğQÆ‚µ‚Ä‚­‚¾‚³‚¢B  
+This software links dynamically with [TagLib#](http://github.com/mono/taglib-sharp) which is released under the LGPS2.1. See COPYING.txt which is bundled in release zip.
