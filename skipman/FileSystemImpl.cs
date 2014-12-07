@@ -5,7 +5,7 @@ using System.Text;
 
 namespace skipman
 {
-    class FileSystemImpl
+    class FileSystemImpl : FileSystem
     {
         public string getWalkmanDriveName()
         {
@@ -28,9 +28,9 @@ namespace skipman
             throw new Exception();
         }
 
-        public string[] getAllFileNames()
+        public string[] getAllFileNames(string folderName)
         {
-            return null;
+            return System.IO.Directory.GetFiles(folderName, "*", System.IO.SearchOption.AllDirectories);
         }
     }
 }

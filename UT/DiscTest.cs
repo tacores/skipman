@@ -29,7 +29,7 @@ namespace skipmanUT
         }
 
         [Test]
-        public void Constructor_AddTrack()
+        public void AddTrack_CreateExpectedTrack()
         {
             Disc sut = new Disc(AnonDisc, 20);
 

@@ -36,7 +36,7 @@ namespace skipmanUT
         }
 
         [Test]
-        public void Constructor_ChangeTrack()
+        public void ChangeTrack()
         {
             Track sut = new Track(100, "", "");
             sut.track = 200;
@@ -45,7 +45,7 @@ namespace skipmanUT
         }
 
         [Test]
-        public void Constructor_ChangeName()
+        public void ChangeName()
         {
             Track sut = new Track(0, "name", "");
             sut.name = "newname";
@@ -54,7 +54,7 @@ namespace skipmanUT
         }
 
         [Test]
-        public void Constructor_ChangePath()
+        public void ChangePath()
         {
             Track sut = new Track(0, "", "path");
             sut.path = "newpath";

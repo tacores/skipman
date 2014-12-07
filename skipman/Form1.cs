@@ -16,72 +16,38 @@ namespace skipman
             InitializeComponent();
 
             removedAlbums = new List<string>();
+            fileSystem = new FileSystemImpl();
+
             searchWalkmanDrive();
         }
+        private FileSystem fileSystem;
 
         private void searchWalkmanDrive()
         {
-            //現在のコンピュータの論理ドライブを取得
-            System.IO.DriveInfo[] drives = System.IO.DriveInfo.GetDrives();
-            foreach (System.IO.DriveInfo d in drives)
+            try
             {
-                try
-                {
-                    if(d.VolumeLabel == "WALKMAN")
-                    {
-                        label1.Text = d.Name + "Music";
-                        return;
-                    }
-                }
-                catch (Exception)
-                {
-                }
+                label1.Text = fileSystem.getWalkmanDriveName() + "Music";
             }
-            MessageBox.Show("WALKMANドライブが見つかりませんでした。\nUSBストレージがONになっているか確認してください。");
-            Environment.Exit(0);
+            catch (Exception)
+            {
+                MessageBox.Show("WALKMANドライブが見つかりませんでした。\nUSBストレージがONになっているか確認してください。");
+                Environment.Exit(0);
+            }
         }
 
         private Dictionary<string, Album> albums;
 
         private void scanMusicFolder()
         {
-            albums = new Dictionary<string,Album>();
-            string[] files = System.IO.Directory.GetFiles(label1.Text, "*", System.IO.SearchOption.AllDirectories);
-            foreach (string file in files)
-            {
-                try
-                {
-                    using (TagLib.File tagFile = TagLib.File.Create(file))
-                    {
-                        if (tagFile.Tag.Disc == 0 || tagFile.Tag.DiscCount == 0 || tagFile.Tag.Track == 0 || tagFile.Tag.TrackCount == 0)
-                        {
-                            continue;
-                        }
+            AlbumDictionaryCreator creator = new AlbumDictionaryCreatorImpl();
 
-                        Album al;
-                        if (!albums.ContainsKey(tagFile.Tag.Album))
-                        {
-                            albums[tagFile.Tag.Album] = new Album(tagFile.Tag.Album, tagFile.Tag.DiscCount);
-                        }
-
-                        al = albums[tagFile.Tag.Album];
-                        al.addTrack(tagFile.Tag.Disc, tagFile.Tag.Track, tagFile.Tag.TrackCount, tagFile.Tag.Title, file);
-                    }
-                }
-                catch (TagLib.CorruptFileException)
-                {
-                    continue;
-                }
-                catch (Exception)
-                {
-                    continue;
-                }
-            }
+            string[] files = fileSystem.getAllFileNames(label1.Text);
+            albums = creator.create(files);
 
             listBoxAlbums.Items.Clear();
             foreach (KeyValuePair<string, Album> pair in albums)
             {
-                if(pair.Value.needHosei)
+                if(pair.Value.needCorrect)
                 {
                     listBoxAlbums.Items.Add(pair.Value.title);
                 }
@@ -109,10 +75,10 @@ namespace skipman
             }
             Album album = albums[albumName];
 
-            for (uint i = 0; album != null && i < album.discCount; ++i)
+            for (uint i = 1; album != null && i <= album.discCount; ++i)
             {
                 Disc disc = album.getDisc(i);
-                for (uint j = 0; disc != null && j < disc.trackCount; ++j)
+                for (uint j = 1; disc != null && j <= disc.trackCount; ++j)
                 {
                     Track track = disc.getTrack(j);
                     dataGridViewDetail.Rows.Add(disc.disk, track.track, track.name);
@@ -130,24 +96,11 @@ namespace skipman
 
         private void overwriteAlbum(string albumName)
         {
+            TrackResetter resetter = new TrackResetter();
             try
             {
                 Album album = albums[albumName];
-                uint newTrack = 1;
-
-                for (uint i = 0; album != null && i < album.discCount; ++i)
-                {
-                    Disc disc = album.getDisc(i);
-                    for (uint j = 0; disc != null && j < disc.trackCount; ++j)
-                    {
-                        Track track = disc.getTrack(j);
-                        using (TagLib.File tagFile = TagLib.File.Create(track.path))
-                        {
-                            tagFile.Tag.Track = newTrack++;
-                            tagFile.Save();
-                        }
-                    }
-                }
+                resetter.reset(album);
                 removedAlbums.Add(albumName);
             }
             catch (Exception e)

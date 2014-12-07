@@ -9,6 +9,6 @@ namespace skipman
     {
         string getWalkmanDriveName();
 
-        string[] getAllFileNames();
+        string[] getAllFileNames(string folderName);
     }
 }

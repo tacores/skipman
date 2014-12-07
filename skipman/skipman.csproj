@@ -51,7 +51,7 @@
   <ItemGroup>
     <Compile Include="Album.cs" />
     <Compile Include="AlbumDictionaryCreatorImpl.cs" />
-    <Compile Include="AlbumListCreator.cs" />
+    <Compile Include="AlbumDictionaryCreator.cs" />
     <Compile Include="Disc.cs" />
     <Compile Include="FileSystem.cs" />
     <Compile Include="FileSystemImpl.cs" />
@@ -67,6 +67,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Track.cs" />
+    <Compile Include="TrackResetter.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

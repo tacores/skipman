@@ -14,21 +14,21 @@ namespace skipman
             discs = new Disc[discCount];
             dict = new Dictionary<uint, string>();
             allTrackCount = 0;
-            needHosei = false;
+            needCorrect = false;
         }
 
-        public void addTrack(uint disk, uint track, uint trackCount, string name, string path)
+        public void addTrack(uint disc, uint track, uint trackCount, string name, string path)
         {
-            if (discs[disk - 1] == null)
+            if (discs[disc - 1] == null)
             {
-                discs[disk - 1] = new Disc(disk, trackCount);
+                discs[disc - 1] = new Disc(disc, trackCount);
             }
-            discs[disk - 1].addTrack(track, name, path);
+            discs[disc - 1].addTrack(track, name, path);
             allTrackCount++;
 
             if (dict.ContainsKey(track))
             {
-                needHosei = true;
+                needCorrect = true;
             }
             else
             {
@@ -51,16 +51,17 @@ namespace skipman
             get;
             set;
         }
+
         private Dictionary<uint, string> dict;
-        public bool needHosei
+        public bool needCorrect
         {
             get;
             set;
         }
 
-        public Disc getDisc(uint index)
+        public Disc getDisc(uint disc)
         {
-            return discs[index];
+            return discs[disc - 1];
         }
 
         Disc[] discs;
