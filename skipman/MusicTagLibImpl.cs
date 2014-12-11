@@ -5,9 +5,9 @@ using System.Text;
 
 namespace skipman
 {
-    class MusicMetaTagLibImpl : MusicTag
+    class MusicTagLibImpl : MusicTag
     {
-        public MusicMetaTagLibImpl(string filePath)
+        public MusicTagLibImpl(string filePath)
         {
             tagFile = TagLib.File.Create(filePath);
         }
@@ -43,6 +43,12 @@ namespace skipman
         {
             get { return tagFile.Tag.TrackCount; }
             set { tagFile.Tag.TrackCount = value; }
+        }
+
+        public string path
+        {
+            get;
+            set;
         }
 
         public void save()

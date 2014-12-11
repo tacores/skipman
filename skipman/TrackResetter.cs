@@ -17,10 +17,10 @@ namespace skipman
                 for (uint j = 1; disc != null && j <= disc.trackCount; ++j)
                 {
                     Track track = disc.getTrack(j);
-                    using (TagLib.File tagFile = TagLib.File.Create(track.path))
+                    using (MusicTag tagFile = MusicTagFactory.create(track.path))
                     {
-                        tagFile.Tag.Track = newTrack++;
-                        tagFile.Save();
+                        tagFile.track = newTrack++;
+                        tagFile.save();
                     }
                 }
             }

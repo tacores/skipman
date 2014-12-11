@@ -5,7 +5,7 @@ using System.Text;
 
 namespace skipman
 {
-    interface MusicTag : IDisposable
+    public interface MusicTag : IDisposable
     {
         string album
         {
@@ -30,6 +30,12 @@ namespace skipman
             set;
         }
         uint trackCount
+        {
+            get;
+            set;
+        }
+
+        string path
         {
             get;
             set;

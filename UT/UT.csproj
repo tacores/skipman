@@ -65,9 +65,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DiscTest.cs" />
+    <Compile Include="stub\MusicTagStub.cs" />
     <Compile Include="TrackTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AlbumTest.cs" />
+    <Compile Include="TrackResetterTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\skipman\skipman.csproj">

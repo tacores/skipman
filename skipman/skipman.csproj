@@ -62,7 +62,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="MusicTag.cs" />
-    <Compile Include="MusicMetaTagLibImpl.cs" />
+    <Compile Include="MusicTagLibImpl.cs" />
     <Compile Include="MusicTagFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

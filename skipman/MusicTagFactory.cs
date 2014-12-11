@@ -5,16 +5,17 @@ using System.Text;
 
 namespace skipman
 {
-    class MusicTagFactory
+    public class MusicTagFactory
     {
         public static MusicTag create(string filePath)
         {
             if (musicTag == null)
             {
-                return new MusicMetaTagLibImpl(filePath);
+                return new MusicTagLibImpl(filePath);
             }
             else
             {
+                musicTag.path = filePath;
                 return musicTag;
             }
         }
