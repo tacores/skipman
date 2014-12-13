@@ -13,12 +13,12 @@ namespace skipman
             set;
         }
 
-        uint disk
+        uint disc
         {
             get;
             set;
         }
-        uint diskCount
+        uint discCount
         {
             get;
             set;
@@ -30,6 +30,12 @@ namespace skipman
             set;
         }
         uint trackCount
+        {
+            get;
+            set;
+        }
+
+        string title
         {
             get;
             set;

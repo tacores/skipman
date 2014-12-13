@@ -5,7 +5,7 @@ using System.Text;
 
 namespace skipman
 {
-    class AlbumDictionaryCreatorImpl : AlbumDictionaryCreator
+    public class AlbumDictionaryCreatorImpl : AlbumDictionaryCreator
     {
         public Dictionary<string, Album> create(string[] files)
         {
@@ -14,26 +14,22 @@ namespace skipman
             {
                 try
                 {
-                    using (TagLib.File tagFile = TagLib.File.Create(file))
+                    using (MusicTag tagFile = MusicTagFactory.create(file))
                     {
-                        if (tagFile.Tag.Disc == 0 || tagFile.Tag.DiscCount == 0 || tagFile.Tag.Track == 0 || tagFile.Tag.TrackCount == 0)
+                        if (tagFile.disc == 0 || tagFile.discCount == 0 || tagFile.track == 0 || tagFile.trackCount == 0)
                         {
                             continue;
                         }
 
                         Album al;
-                        if (!dict.ContainsKey(tagFile.Tag.Album))
+                        if (!dict.ContainsKey(tagFile.album))
                         {
-                            dict[tagFile.Tag.Album] = new Album(tagFile.Tag.Album, tagFile.Tag.DiscCount);
+                            dict[tagFile.album] = new Album(tagFile.album, tagFile.discCount);
                         }
 
-                        al = dict[tagFile.Tag.Album];
-                        al.addTrack(tagFile.Tag.Disc, tagFile.Tag.Track, tagFile.Tag.TrackCount, tagFile.Tag.Title, file);
+                        al = dict[tagFile.album];
+                        al.addTrack(tagFile.disc, tagFile.track, tagFile.trackCount, tagFile.title, file);
                     }
-                }
-                catch (TagLib.CorruptFileException)
-                {
-                    continue;
                 }
                 catch (Exception)
                 {

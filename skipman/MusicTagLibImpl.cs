@@ -23,12 +23,12 @@ namespace skipman
             set { tagFile.Tag.Album = value;  }
         }
 
-        public uint disk
+        public uint disc
         {
             get { return tagFile.Tag.Disc; }
             set { tagFile.Tag.Disc = value; }
         }
-        public uint diskCount
+        public uint discCount
         {
             get { return tagFile.Tag.DiscCount; }
             set { tagFile.Tag.DiscCount = value; }
@@ -43,6 +43,12 @@ namespace skipman
         {
             get { return tagFile.Tag.TrackCount; }
             set { tagFile.Tag.TrackCount = value; }
+        }
+
+        public string title
+        {
+            get { return tagFile.Tag.Title; }
+            set { tagFile.Tag.Title = value;  }
         }
 
         public string path

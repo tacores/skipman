@@ -11,7 +11,12 @@ namespace skipmanUT.stub
     {
         public MusicTagStub()
         {
+            pathAlbumDictionary = new Dictionary<string, string>();
+            pathDiscDictionary = new Dictionary<string, uint>();
+            pathDiscCountDictionary = new Dictionary<string, uint>();
             pathTrackDictionary = new Dictionary<string, uint>();
+            pathTrackCountDictionary = new Dictionary<string, uint>();
+            pathTitleDictionary = new Dictionary<string, string>();
         }
 
         public void Dispose()
@@ -20,30 +25,36 @@ namespace skipmanUT.stub
 
         public string album
         {
-            get;
-            set;
+            get { return pathAlbumDictionary[path]; }
+            set { pathAlbumDictionary[path] = value;  }
         }
 
-        public uint disk
+        public uint disc
         {
-            get;
-            set;
+            get { return pathDiscDictionary[path]; }
+            set { pathDiscDictionary[path] = value; }
         }
-        public uint diskCount
+        public uint discCount
         {
-            get;
-            set;
+            get { return pathDiscCountDictionary[path]; }
+            set { pathDiscCountDictionary[path] = value; }
         }
 
         public uint track
         {
-            get;
-            set;
+            get { return pathTrackDictionary[path]; }
+            set { pathTrackDictionary[path] = value; }
         }
         public uint trackCount
         {
-            get;
-            set;
+            get { return pathTrackCountDictionary[path]; }
+            set { pathTrackCountDictionary[path] = value; }
+        }
+
+        public string title
+        {
+            get { return pathTitleDictionary[path]; }
+            set { pathTitleDictionary[path] = value; }
         }
 
         public string path
@@ -57,6 +68,11 @@ namespace skipmanUT.stub
             pathTrackDictionary[path] = track;
         }
 
+        static public Dictionary<string, string> pathAlbumDictionary;
+        static public Dictionary<string, uint> pathDiscDictionary;
+        static public Dictionary<string, uint> pathDiscCountDictionary;
         static public Dictionary<string, uint> pathTrackDictionary;
+        static public Dictionary<string, uint> pathTrackCountDictionary;
+        static public Dictionary<string, string> pathTitleDictionary;
     }
 }
