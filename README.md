@@ -4,17 +4,18 @@ skipman
 skipman‚ÍASONY»ƒEƒH[ƒNƒ}ƒ“NW-ZX1“à‚ÌA•¡”–‡ƒAƒ‹ƒoƒ€‚Ì‹È‡‚ðŽ©“®’ù³‚·‚éƒvƒƒOƒ‰ƒ€‚Å‚·B
 
 # ‹ï‘Ì“I‚É‚ÍH 
-NW-ZX1‚Å‚ÍA•¡”–‡ƒAƒ‹ƒoƒ€‚ðÄ¶‚·‚é‚Æ‚«A1–‡–Ú‚Ìƒgƒ‰ƒbƒN1A2–‡–Ú‚Ìƒgƒ‰ƒbƒN1A1–‡–Ú‚Ìƒgƒ‰ƒbƒN2A2–‡–Ú‚Ìƒgƒ‰ƒbƒN2EEE‚Æ‚¢‚¤•sŽ©‘R‚È‡˜‚ÅÄ¶‚³‚ê‚éŽd—l‚É‚È‚Á‚Ä‚¢‚Ü‚·B  
-ƒAƒ‹ƒoƒ€“à‚Å‚Ìƒgƒ‰ƒbƒN”Ô†‚ðˆêˆÓ‚É‚È‚é‚æ‚¤‘‚«Š·‚¦‚é‚±‚Æ‚É‚æ‚Á‚ÄA1–‡–Ú‚Ìƒgƒ‰ƒbƒN1A1–‡–Ú‚Ìƒgƒ‰ƒbƒN2AEEE2–‡–Ú‚Ìƒgƒ‰ƒbƒN1A2–‡–Ú‚Ìƒgƒ‰ƒbƒN2EEE‚Æ‚¢‚¤Ž©‘R‚È‹È‡‚ÅÄ¶‚³‚ê‚é‚æ‚¤‚É‚µ‚Ü‚·B  
-‚È‚¨A‚±‚ÌƒAƒvƒŠ‚ÍuƒAƒ‹ƒoƒ€‚Ìƒ^ƒCƒgƒ‹–¼v‚Ìˆê’v‚Å“¯ˆê‚ÌƒAƒ‹ƒoƒ€‚Æ”»’f‚µ‚Ü‚·BˆÙ‚È‚éƒA[ƒeƒBƒXƒg‚Å“¯–¼‚ÌƒAƒ‹ƒoƒ€‚ª“ü‚Á‚Ä‚¢‚éê‡A‚©‚¦‚Á‚Ä•sŽ©‘R‚ÈŒ‹‰Ê‚É‚È‚é‰Â”\«‚ª‚ ‚è‚Ü‚·B
+NW-ZX1‚Å‚ÍA2–‡‘g‚È‚Ç‚Ì•¡”–‡ƒAƒ‹ƒoƒ€‚ðÄ¶‚·‚é‚Æ‚«A1–‡–Ú‚Ìƒgƒ‰ƒbƒN1A2–‡–Ú‚Ìƒgƒ‰ƒbƒN1A1–‡–Ú‚Ìƒgƒ‰ƒbƒN2A2–‡–Ú‚Ìƒgƒ‰ƒbƒN2EEE‚Æ‚¢‚¤•sŽ©‘R‚È‹È‡‚ÅÄ¶‚³‚ê‚éŽd—l‚É‚È‚Á‚Ä‚¢‚Ü‚·B  
+skipman‚ÍAƒAƒ‹ƒoƒ€“à‚Å‚Ìƒgƒ‰ƒbƒN”Ô†‚ðˆêˆÓ‚É‘‚«Š·‚¦‚é‚±‚Æ‚ÅA1–‡–Ú‚Ìƒgƒ‰ƒbƒN1A1–‡–Ú‚Ìƒgƒ‰ƒbƒN2AEEE2–‡–Ú‚Ìƒgƒ‰ƒbƒN1A2–‡–Ú‚Ìƒgƒ‰ƒbƒN2EEE‚Æ‚¢‚¤Ž©‘R‚È‹È‡‚ÅÄ¶‚³‚ê‚é‚æ‚¤‚É‚µ‚Ü‚·B  
 
 # Žg—p•û–@
-1. [release](http://github.com/tacores/skipman/releases)‚©‚çƒoƒCƒiƒŠ‚ðƒ_ƒEƒ“ƒ[ƒh‚µ‚Ü‚·B
-2. WindowsPC‚ÉANW-ZX1‚ðUSBƒXƒgƒŒ[ƒWON‚Ìó‘Ô‚ÅÚ‘±‚µ‚Ü‚·B
-3. skipman.exe‚ðƒ_ƒuƒ‹ƒNƒŠƒbƒN‚µ‚Ä‹N“®‚µ‚Ü‚·B
-4. uƒXƒLƒƒƒ“vƒ{ƒ^ƒ“‚ð‰Ÿ‚µ‚Ü‚·BƒXƒLƒƒƒ“‚É‚Í”•ªˆÈã‚ÌŽžŠÔ‚ª‚©‚©‚é‚Ì‚Å‹C’·‚É‘Ò‚Á‚Ä‚­‚¾‚³‚¢B
-5. •¡”–‡ƒAƒ‹ƒoƒ€‚ÆŽv‚í‚ê‚éƒAƒ‹ƒoƒ€‚ªˆê——•\Ž¦‚³‚ê‚Ü‚·BƒAƒ‹ƒoƒ€‚ð‘I‘ð‚·‚é‚ÆA‰º‚Ì—“‚É‹È‚ª•\Ž¦‚³‚ê‚Ü‚·B
-6. u‘I‘ð‚µ‚½ƒAƒ‹ƒoƒ€‚ðÄÌ”Ôv‚Ü‚½‚Íu¶‚Ì‘SƒAƒ‹ƒoƒ€‚ðÄÌ”Ôvƒ{ƒ^ƒ“‚ð‰Ÿ‚µ‚Ü‚·B
+1. ŽÀs‘O‚É‰¹Šyƒtƒ@ƒCƒ‹‚ÌƒoƒbƒNƒAƒbƒv‚ðŽæ‚Á‚Ä‚¨‚­‚±‚Æ‚ð‚¨‚·‚·‚ß‚µ‚Ü‚·B
+2. [release](http://github.com/tacores/skipman/releases)‚©‚çZIPƒtƒ@ƒCƒ‹‚ðƒ_ƒEƒ“ƒ[ƒh‚µ‚Ä‰ð“€‚µ‚Ü‚·B
+3. WindowsPC‚ÉANW-ZX1‚ðUSBƒXƒgƒŒ[ƒWON‚Ìó‘Ô‚ÅÚ‘±‚µ‚Ü‚·B
+4. skipman.exe‚ðƒ_ƒuƒ‹ƒNƒŠƒbƒN‚µ‚Ä‹N“®‚µ‚Ü‚·B
+5. uƒXƒLƒƒƒ“vƒ{ƒ^ƒ“‚ð‰Ÿ‚µ‚Ü‚·BƒXƒLƒƒƒ“‚É‚Í”•ªˆÈã‚ÌŽžŠÔ‚ª‚©‚©‚é‚Ì‚Å‹C’·‚É‘Ò‚Á‚Ä‚­‚¾‚³‚¢B
+6. •¡”–‡ƒAƒ‹ƒoƒ€‚ÆŽv‚í‚ê‚éƒAƒ‹ƒoƒ€‚ªˆê——•\Ž¦‚³‚ê‚Ü‚·BƒAƒ‹ƒoƒ€‚ð‘I‘ð‚·‚é‚ÆA‰º‚Ì—“‚É‹È‚ª•\Ž¦‚³‚ê‚Ü‚·B
+7. u‘I‘ð‚µ‚½ƒAƒ‹ƒoƒ€‚ðÄÌ”Ôv‚Ü‚½‚Íu¶‚Ì‘SƒAƒ‹ƒoƒ€‚ðÄÌ”Ôvƒ{ƒ^ƒ“‚ð‰Ÿ‚µ‚Ü‚·B  
+![‰æ–ÊƒLƒƒƒvƒ`ƒƒ](https://raw.githubusercontent.com/tacores/skipman/master/images/capture.png)
 
 # ŠÂ‹«
 ## ŽÀsŠÂ‹«
@@ -22,7 +23,8 @@ NW-ZX1‚Å‚ÍA•¡”–‡ƒAƒ‹ƒoƒ€‚ðÄ¶‚·‚é‚Æ‚«A1–‡–Ú‚Ìƒgƒ‰ƒbƒN1A2–‡–Ú‚Ìƒgƒ‰ƒbƒN1A1–
 ‚½‚¾‚µAMac‚ÅNW-ZX1‚É“]‘—‚µ‚½ƒAƒ‹ƒoƒ€‚É‘Î‚µ‚Ä‚àŽg‚¦‚Ü‚·B
 ## ŠJ”­ŠÂ‹«
 Visual Studio 2010ˆÈ~A.NET Framework4B  
-ŽQÆÝ’è‚Å[TagLib#](http://github.com/mono/taglib-sharp)‚Ìutaglib-sharp.dllv‚ÌŽQÆ‚ð’Ç‰Á‚·‚é•K—v‚ª‚ ‚è‚Ü‚·B
+ŽQÆÝ’è‚Å[TagLib#](http://github.com/mono/taglib-sharp)‚Ìutaglib-sharp.dllv‚ÌŽQÆ‚ð’Ç‰Á‚·‚é•K—v‚ª‚ ‚è‚Ü‚·B  
+ƒ†ƒjƒbƒgƒeƒXƒg‚ÌŽÀs‚É‚ÍAuNUnitv‚ÆuNSubstitutev‚ÌŽQÆ‚ð’Ç‰Á‚·‚é•K—v‚ª‚ ‚è‚Ü‚·B
 
 # ƒ‰ƒCƒZƒ“ƒX
 skipman‚ÍMITƒ‰ƒCƒZƒ“ƒX‚Å‚·B“¯«‚ÌuLICENSEv‚ðŽQÆ‚µ‚Ä‚­‚¾‚³‚¢B  
