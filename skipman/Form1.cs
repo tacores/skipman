@@ -12,6 +12,10 @@ namespace skipman
 {
     public partial class Form1 : Form, ProgressListener
     {
+        private Dictionary<string, Album> albums;
+        private List<string> removedAlbums;
+        private FileSystem fileSystem;
+
         public Form1()
         {
             InitializeComponent();
@@ -21,7 +25,6 @@ namespace skipman
 
             searchWalkmanDrive();
         }
-        private FileSystem fileSystem;
 
         private void searchWalkmanDrive()
         {
@@ -36,14 +39,10 @@ namespace skipman
             }
         }
 
-        private Dictionary<string, Album> albums;
-
         private void scanMusicFolder()
         {
-            AlbumDictionaryCreator creator = new AlbumDictionaryCreatorImpl(this);
-
             string[] files = fileSystem.getAllFileNames(labelFolder.Text);
-            albums = creator.create(files);
+            albums = new AlbumDictionaryCreatorImpl(this).create(files);
 
             updateAlbumList();
         }
@@ -63,7 +62,7 @@ namespace skipman
             {
                 if (pair.Value.needCorrect)
                 {
-                    listBoxAlbums.Items.Add(pair.Value.title);
+                    listBoxAlbums.Items.Add(pair.Value.Title);
                 }
             }
             if (listBoxAlbums.Items.Count == 0)
@@ -90,13 +89,14 @@ namespace skipman
             }
             Album album = albums[albumName];
 
-            for (uint i = 1; album != null && i <= album.discCount; ++i)
+            int newTrack = 1;
+            for (uint i = 1; album != null && i <= album.DiscCount; ++i)
             {
                 Disc disc = album.getDisc(i);
-                for (uint j = 1; disc != null && j <= disc.trackCount; ++j)
+                for (uint j = 1; disc != null && j <= disc.TrackCount; ++j)
                 {
                     Track track = disc.getTrack(j);
-                    dataGridViewDetail.Rows.Add(disc.disk, track.track, track.name);
+                    dataGridViewDetail.Rows.Add(disc.DiskNum, track.TrackNum, newTrack++, track.Name, track.Artist);
                 }
             }
         }
@@ -125,8 +125,6 @@ namespace skipman
             }
         }
 
-        private List<string> removedAlbums;
-
         private void buttonAll_Click(object sender, EventArgs e)
         {
             foreach (string albumName in listBoxAlbums.Items)
@@ -147,7 +145,6 @@ namespace skipman
         }
 
         delegate void delegateNotifyProgress(int all, int done);
-
         public void notifyProgress(int all, int done)
         {
             if(this.InvokeRequired)
@@ -156,14 +153,22 @@ namespace skipman
                 this.Invoke(dlg, all, done);
                 return;
             }
+            updateProgressBar(all, done);
+            updateProgressLabel(all, done);
+        }
 
-            labelProgress.Text = "(" + done + "/" + all + ")";
+        private void updateProgressBar(int all, int done)
+        {
             progressBarScan.Minimum = 0;
             progressBarScan.Maximum = all;
             progressBarScan.Value = done;
-
-            labelProgress.Update();
             progressBarScan.Update();
+        }
+
+        private void updateProgressLabel(int all, int done)
+        {
+            labelProgress.Text = "(" + done + "/" + all + ")";
+            labelProgress.Update();
         }
     }
 }

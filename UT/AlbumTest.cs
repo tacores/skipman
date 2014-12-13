@@ -16,7 +16,7 @@ namespace skipmanUT
         {
             Album sut = new Album("title", 1);
 
-            Assert.AreEqual("title", sut.title);
+            Assert.AreEqual("title", sut.Title);
         }
 
         [Test]
@@ -24,7 +24,7 @@ namespace skipmanUT
         {
             Album sut = new Album("", 3);
 
-            Assert.AreEqual(3, sut.discCount);
+            Assert.AreEqual(3, sut.DiscCount);
         }
 
         [Test]
@@ -32,10 +32,10 @@ namespace skipmanUT
         {
             Album sut = new Album("", 3);
 
-            sut.addTrack(1, 10, 15, "track1", "path1");
+            sut.addTrack(1, 10, 15, "track1", "path1", "artist1");
             Disc disc = sut.getDisc(1);
 
-            Assert.AreEqual(1, disc.disk);
+            Assert.AreEqual(1, disc.DiskNum);
         }
 
         [Test]
@@ -43,12 +43,13 @@ namespace skipmanUT
         {
             Album sut = new Album("", 3);
 
-            sut.addTrack(1, 10, 15, "track1", "path1");
+            sut.addTrack(1, 10, 15, "track1", "path1", "artist1");
             Track track = sut.getDisc(1).getTrack(10);
 
-            Assert.AreEqual(10, track.track);
-            Assert.AreEqual("track1", track.name);
-            Assert.AreEqual("path1", track.path);
+            Assert.AreEqual(10, track.TrackNum);
+            Assert.AreEqual("track1", track.Name);
+            Assert.AreEqual("path1", track.Path);
+            Assert.AreEqual("artist1", track.Artist);
         }
 
         [Test]
@@ -56,12 +57,13 @@ namespace skipmanUT
         {
             Album sut = new Album("", 3);
 
-            sut.addTrack(1, 1, 15, "track1", "path1");
+            sut.addTrack(1, 1, 15, "track1", "path1", "artist1");
             Track track = sut.getDisc(1).getTrack(1);
 
-            Assert.AreEqual(1, track.track);
-            Assert.AreEqual("track1", track.name);
-            Assert.AreEqual("path1", track.path);
+            Assert.AreEqual(1, track.TrackNum);
+            Assert.AreEqual("track1", track.Name);
+            Assert.AreEqual("path1", track.Path);
+            Assert.AreEqual("artist1", track.Artist);
         }
 
         [Test]
@@ -69,12 +71,13 @@ namespace skipmanUT
         {
             Album sut = new Album("", 3);
 
-            sut.addTrack(1, 15, 15, "track1", "path1");
+            sut.addTrack(1, 15, 15, "track1", "path1", "artist1");
             Track track = sut.getDisc(1).getTrack(15);
 
-            Assert.AreEqual(15, track.track);
-            Assert.AreEqual("track1", track.name);
-            Assert.AreEqual("path1", track.path);
+            Assert.AreEqual(15, track.TrackNum);
+            Assert.AreEqual("track1", track.Name);
+            Assert.AreEqual("path1", track.Path);
+            Assert.AreEqual("artist1", track.Artist);
         }
 
         [Test]
@@ -118,14 +121,15 @@ namespace skipmanUT
         {
             Album sut = new Album("", 3);
 
-            sut.addTrack(1, 10, 15, "track1", "path1");
-            sut.addTrack(1, 11, 15, "track2", "path2");
+            sut.addTrack(1, 10, 15, "track1", "path1", "artist1");
+            sut.addTrack(1, 11, 15, "track2", "path2", "artist2");
             Track track1 = sut.getDisc(1).getTrack(10);
             Track track2 = sut.getDisc(1).getTrack(11);
 
-            Assert.AreEqual(11, track2.track);
-            Assert.AreEqual("track2", track2.name);
-            Assert.AreEqual("path2", track2.path);
+            Assert.AreEqual(11, track2.TrackNum);
+            Assert.AreEqual("track2", track2.Name);
+            Assert.AreEqual("path2", track2.Path);
+            Assert.AreEqual("artist2", track2.Artist);
         }
 
         [Test]
@@ -133,13 +137,14 @@ namespace skipmanUT
         {
             Album sut = new Album("", 3);
 
-            sut.addTrack(1, 10, 15, "track1", "path1");
-            sut.addTrack(2, 11, 15, "track2", "path2");
+            sut.addTrack(1, 10, 15, "track1", "path1", "artist1");
+            sut.addTrack(2, 11, 15, "track2", "path2", "artist2");
             Track track2 = sut.getDisc(2).getTrack(11);
 
-            Assert.AreEqual(11, track2.track);
-            Assert.AreEqual("track2", track2.name);
-            Assert.AreEqual("path2", track2.path);
+            Assert.AreEqual(11, track2.TrackNum);
+            Assert.AreEqual("track2", track2.Name);
+            Assert.AreEqual("path2", track2.Path);
+            Assert.AreEqual("artist2", track2.Artist);
         }
 
         [Test]
@@ -147,8 +152,8 @@ namespace skipmanUT
         {
             Album sut = new Album("", 3);
 
-            sut.addTrack(1, 10, 15, "track1", "path1");
-            sut.addTrack(2, 11, 15, "track2", "path2");
+            sut.addTrack(1, 10, 15, "track1", "path1", "artist1");
+            sut.addTrack(2, 11, 15, "track2", "path2", "artist2");
 
             Assert.AreEqual(false, sut.needCorrect);
         }
@@ -158,8 +163,8 @@ namespace skipmanUT
         {
             Album sut = new Album("", 3);
 
-            sut.addTrack(1, 10, 15, "track1", "path1");
-            sut.addTrack(2, 10, 15, "track2", "path2");
+            sut.addTrack(1, 10, 15, "track1", "path1", "artist1");
+            sut.addTrack(2, 10, 15, "track2", "path2", "artist2");
 
             Assert.AreEqual(true, sut.needCorrect);
         }

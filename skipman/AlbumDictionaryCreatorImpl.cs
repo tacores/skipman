@@ -36,7 +36,7 @@ namespace skipman
                         }
 
                         al = dict[tagFile.album];
-                        al.addTrack(tagFile.disc, tagFile.track, tagFile.trackCount, tagFile.title, file);
+                        al.addTrack(tagFile.disc, tagFile.track, tagFile.trackCount, tagFile.title, file, tagFile.artist);
                     }
                 }
                 catch (Exception)

@@ -27,10 +27,10 @@ namespace skipmanUT
         public void Twodiscs_Each2Tracks()
         {
             Album album = new Album("title", 2);
-            album.addTrack(1, 1, 2, "", "1-1");
-            album.addTrack(1, 2, 2, "", "1-2");
-            album.addTrack(2, 1, 2, "", "2-1");
-            album.addTrack(2, 2, 2, "", "2-2");
+            album.addTrack(1, 1, 2, "", "1-1", "");
+            album.addTrack(1, 2, 2, "", "1-2", "");
+            album.addTrack(2, 1, 2, "", "2-1", "");
+            album.addTrack(2, 2, 2, "", "2-2", "");
 
             sut.reset(album);
 

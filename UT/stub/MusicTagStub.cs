@@ -63,6 +63,12 @@ namespace skipmanUT.stub
             set;
         }
 
+        public string artist
+        {
+            get;
+            set;
+        }
+
         public void save()
         {
             pathTrackDictionary[path] = track;

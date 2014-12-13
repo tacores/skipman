@@ -57,6 +57,22 @@ namespace skipman
             set;
         }
 
+        public string artist
+        {
+            get
+            {
+                try
+                {
+                    return tagFile.Tag.FirstPerformer;
+                }
+                catch (Exception)
+                {
+                    return "";
+                }
+            }
+            set {}
+        }
+
         public void save()
         {
             tagFile.Save();

@@ -17,7 +17,7 @@ namespace skipmanUT
         {
             Disc sut = new Disc(3, TrackCount);
 
-            Assert.AreEqual(3, sut.disk);
+            Assert.AreEqual(3, sut.DiskNum);
         }
 
         [Test]
@@ -25,7 +25,7 @@ namespace skipmanUT
         {
             Disc sut = new Disc(AnonDisc, 20);
 
-            Assert.AreEqual(20, sut.trackCount);
+            Assert.AreEqual(20, sut.TrackCount);
         }
 
         [Test]
@@ -33,13 +33,14 @@ namespace skipmanUT
         {
             Disc sut = new Disc(AnonDisc, 20);
 
-            sut.addTrack(10, "name", "path");
+            sut.addTrack(10, "name", "path", "artist");
 
-            Track expect = new Track(10, "name", "path");
+            Track expect = new Track(10, "name", "path", "artist");
             Track ret = sut.getTrack(10);
-            Assert.AreEqual(expect.track, ret.track);
-            Assert.AreEqual(expect.name, ret.name);
-            Assert.AreEqual(expect.path, ret.path);
+            Assert.AreEqual(expect.TrackNum, ret.TrackNum);
+            Assert.AreEqual(expect.Name, ret.Name);
+            Assert.AreEqual(expect.Path, ret.Path);
+            Assert.AreEqual(expect.Artist, ret.Artist);
         }
 
         private const uint AnonDisc = 1;

@@ -7,26 +7,33 @@ namespace skipman
 {
     public class Track
     {
-        public Track(uint track, string name, string path)
+        public Track(uint track, string name, string path, string artist)
         {
-            this.track = track;
-            this.name = name;
-            this.path = path;
+            TrackNum = track;
+            Name = name;
+            Path = path;
+            Artist = artist;
         }
 
-        public string path
-        {
-            get;
-            set;
-        }
-
-        public string name
+        public string Path
         {
             get;
             set;
         }
 
-        public uint track
+        public string Name
+        {
+            get;
+            set;
+        }
+
+        public uint TrackNum
+        {
+            get;
+            set;
+        }
+
+        public string Artist
         {
             get;
             set;

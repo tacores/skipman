@@ -14,52 +14,61 @@ namespace skipmanUT
         [Test]
         public void Constructor_Track()
         {
-            Track sut = new Track(100, "", "");
+            Track sut = new Track(100, "", "", "");
 
-            Assert.AreEqual(100, sut.track);
+            Assert.AreEqual(100, sut.TrackNum);
         }
 
         [Test]
         public void Constructor_Name()
         {
-            Track sut = new Track(0, "name", "");
+            Track sut = new Track(0, "name", "", "");
 
-            Assert.AreEqual("name", sut.name);
+            Assert.AreEqual("name", sut.Name);
         }
 
         [Test]
         public void Constructor_Path()
         {
-            Track sut = new Track(0, "", "path");
+            Track sut = new Track(0, "", "path", "");
 
-            Assert.AreEqual("path", sut.path);
+            Assert.AreEqual("path", sut.Path);
         }
 
         [Test]
         public void ChangeTrack()
         {
-            Track sut = new Track(100, "", "");
-            sut.track = 200;
+            Track sut = new Track(100, "", "", "");
+            sut.TrackNum = 200;
 
-            Assert.AreEqual(200, sut.track);
+            Assert.AreEqual(200, sut.TrackNum);
         }
 
         [Test]
         public void ChangeName()
         {
-            Track sut = new Track(0, "name", "");
-            sut.name = "newname";
+            Track sut = new Track(0, "name", "", "");
+            sut.Name = "newname";
 
-            Assert.AreEqual("newname", sut.name);
+            Assert.AreEqual("newname", sut.Name);
         }
 
         [Test]
         public void ChangePath()
         {
-            Track sut = new Track(0, "", "path");
-            sut.path = "newpath";
+            Track sut = new Track(0, "", "path", "");
+            sut.Path = "newpath";
 
-            Assert.AreEqual("newpath", sut.path);
+            Assert.AreEqual("newpath", sut.Path);
+        }
+
+        [Test]
+        public void ChangeArtist()
+        {
+            Track sut = new Track(0, "", "path", "");
+            sut.Artist = "artist-name";
+
+            Assert.AreEqual("artist-name", sut.Artist);
         }
     }
 }

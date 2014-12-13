@@ -11,13 +11,13 @@ namespace skipman
         {
             uint newTrack = 1;
 
-            for (uint i = 1; album != null && i <= album.discCount; ++i)
+            for (uint i = 1; album != null && i <= album.DiscCount; ++i)
             {
                 Disc disc = album.getDisc(i);
-                for (uint j = 1; disc != null && j <= disc.trackCount; ++j)
+                for (uint j = 1; disc != null && j <= disc.TrackCount; ++j)
                 {
                     Track track = disc.getTrack(j);
-                    using (MusicTag tagFile = MusicTagFactory.create(track.path))
+                    using (MusicTag tagFile = MusicTagFactory.create(track.Path))
                     {
                         tagFile.track = newTrack++;
                         tagFile.save();

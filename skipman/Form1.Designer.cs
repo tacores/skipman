@@ -36,11 +36,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridViewDetail = new System.Windows.Forms.DataGridView();
-            this.Disc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Track = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.progressBarScan = new System.Windows.Forms.ProgressBar();
             this.labelProgress = new System.Windows.Forms.Label();
+            this.Disc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Track = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NewTrack = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Artist = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetail)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,32 +117,23 @@
             // 
             this.dataGridViewDetail.AllowUserToAddRows = false;
             this.dataGridViewDetail.AllowUserToDeleteRows = false;
+            this.dataGridViewDetail.AllowUserToResizeRows = false;
+            this.dataGridViewDetail.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dataGridViewDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Disc,
             this.Track,
-            this.Title});
+            this.NewTrack,
+            this.Title,
+            this.Artist});
             this.dataGridViewDetail.Location = new System.Drawing.Point(12, 247);
+            this.dataGridViewDetail.MultiSelect = false;
             this.dataGridViewDetail.Name = "dataGridViewDetail";
+            this.dataGridViewDetail.ReadOnly = true;
             this.dataGridViewDetail.RowTemplate.Height = 21;
             this.dataGridViewDetail.Size = new System.Drawing.Size(756, 178);
             this.dataGridViewDetail.TabIndex = 10;
-            // 
-            // Disc
-            // 
-            this.Disc.HeaderText = "Disc";
-            this.Disc.Name = "Disc";
-            // 
-            // Track
-            // 
-            this.Track.HeaderText = "Track";
-            this.Track.Name = "Track";
-            // 
-            // Title
-            // 
-            this.Title.HeaderText = "Title";
-            this.Title.Name = "Title";
-            this.Title.Width = 400;
+            this.dataGridViewDetail.TabStop = false;
             // 
             // progressBarScan
             // 
@@ -158,6 +151,46 @@
             this.labelProgress.Size = new System.Drawing.Size(17, 12);
             this.labelProgress.TabIndex = 12;
             this.labelProgress.Text = "   ";
+            // 
+            // Disc
+            // 
+            this.Disc.HeaderText = "ディスク";
+            this.Disc.Name = "Disc";
+            this.Disc.ReadOnly = true;
+            this.Disc.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Disc.Width = 70;
+            // 
+            // Track
+            // 
+            this.Track.HeaderText = "トラック";
+            this.Track.Name = "Track";
+            this.Track.ReadOnly = true;
+            this.Track.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Track.Width = 70;
+            // 
+            // NewTrack
+            // 
+            this.NewTrack.HeaderText = "変更後トラック";
+            this.NewTrack.Name = "NewTrack";
+            this.NewTrack.ReadOnly = true;
+            this.NewTrack.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.NewTrack.Width = 70;
+            // 
+            // Title
+            // 
+            this.Title.HeaderText = "タイトル";
+            this.Title.Name = "Title";
+            this.Title.ReadOnly = true;
+            this.Title.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Title.Width = 300;
+            // 
+            // Artist
+            // 
+            this.Artist.HeaderText = "アーティスト";
+            this.Artist.Name = "Artist";
+            this.Artist.ReadOnly = true;
+            this.Artist.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Artist.Width = 200;
             // 
             // Form1
             // 
@@ -192,11 +225,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridViewDetail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Disc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Track;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Title;
         private System.Windows.Forms.ProgressBar progressBarScan;
         private System.Windows.Forms.Label labelProgress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Disc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Track;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NewTrack;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Title;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Artist;
     }
 }
 

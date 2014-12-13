@@ -9,22 +9,22 @@ namespace skipman
     {
         public Album(string title, uint discCount)
         {
-            this.title = title;
-            this.discCount = discCount;
+            this.Title = title;
+            this.DiscCount = discCount;
             discs = new Disc[discCount];
             dict = new Dictionary<uint, string>();
-            allTrackCount = 0;
+            AllTrackCount = 0;
             needCorrect = false;
         }
 
-        public void addTrack(uint disc, uint track, uint trackCount, string name, string path)
+        public void addTrack(uint disc, uint track, uint trackCount, string name, string path, string artist)
         {
             if (discs[disc - 1] == null)
             {
                 discs[disc - 1] = new Disc(disc, trackCount);
             }
-            discs[disc - 1].addTrack(track, name, path);
-            allTrackCount++;
+            discs[disc - 1].addTrack(track, name, path, artist);
+            AllTrackCount++;
 
             if (dict.ContainsKey(track))
             {
@@ -36,17 +36,17 @@ namespace skipman
             }
         }
 
-        public string title
+        public string Title
         {
             get;
             set;
         }
-        public uint discCount
+        public uint DiscCount
         {
             get;
             set;
         }
-        public uint allTrackCount
+        public uint AllTrackCount
         {
             get;
             set;

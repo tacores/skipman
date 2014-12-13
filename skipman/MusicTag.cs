@@ -47,6 +47,12 @@ namespace skipman
             set;
         }
 
+        string artist
+        {
+            get;
+            set;
+        }
+
         void save();
     }
 }

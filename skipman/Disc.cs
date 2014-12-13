@@ -9,14 +9,14 @@ namespace skipman
     {
         public Disc(uint disk, uint trackCount)
         {
-            this.trackCount = trackCount;
+            TrackCount = trackCount;
             tracks = new Track[trackCount];
-            this.disk = disk;
+            DiskNum = disk;
         }
 
-        public void addTrack(uint track, string name, string path)
+        public void addTrack(uint track, string name, string path, string artist)
         {
-            tracks[track - 1] = new Track(track, name, path);
+            tracks[track - 1] = new Track(track, name, path, artist);
         }
 
         public Track getTrack(uint track)
@@ -24,13 +24,13 @@ namespace skipman
             return tracks[track - 1];
         }
 
-        public uint trackCount
+        public uint TrackCount
         {
             get;
             set;
         }
 
-        public uint disk
+        public uint DiskNum
         {
             get;
             set;
