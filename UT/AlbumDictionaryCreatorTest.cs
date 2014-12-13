@@ -8,6 +8,7 @@ namespace skipmanUT
     using NUnit.Framework;
     using skipman;
     using skipmanUT.stub;
+    using NSubstitute;
 
     [TestFixture]
     public class AlbumDictionaryCreatorTest
@@ -18,7 +19,7 @@ namespace skipmanUT
         [SetUp]
         public void Init()
         {
-            sut = new AlbumDictionaryCreatorImpl();
+            sut = new AlbumDictionaryCreatorImpl(new ProgressListenerStub());
             stub = new MusicTagStub();
             MusicTagFactory.set(stub);
         }
@@ -206,6 +207,66 @@ namespace skipmanUT
 
             //verify
             Assert.AreEqual(0, dict.Count);
+        }
+
+        [Test]
+        public void CallNotifyProgress_Once()
+        {
+            //setup
+            ProgressListener mock = Substitute.For<ProgressListener>();
+            sut = new AlbumDictionaryCreatorImpl(mock);
+
+            string path1 = "path1";
+            string[] files = new string[1];
+            files[0] = path1;
+
+            MusicTagStub.pathAlbumDictionary[path1] = "album1";
+            MusicTagStub.pathDiscDictionary[path1] = 1;
+            MusicTagStub.pathDiscCountDictionary[path1] = 1;
+            MusicTagStub.pathTrackDictionary[path1] = 1;
+            MusicTagStub.pathTrackCountDictionary[path1] = 1;
+            MusicTagStub.pathTitleDictionary[path1] = "title1";
+
+            //exercise
+            Dictionary<string, Album> dict = sut.create(files);
+
+            //verify
+            mock.Received().notifyProgress(1, 1);
+        }
+
+        [Test]
+        public void CallNotifyProgress_Twice()
+        {
+            //setup
+            ProgressListener mock = Substitute.For<ProgressListener>();
+            sut = new AlbumDictionaryCreatorImpl(mock);
+
+            string path1 = "path1";
+            string path2 = "path2";
+            string[] files = new string[2];
+            files[0] = path1;
+            files[1] = path2;
+
+            MusicTagStub.pathAlbumDictionary[path1] = "album1";
+            MusicTagStub.pathDiscDictionary[path1] = 1;
+            MusicTagStub.pathDiscCountDictionary[path1] = 1;
+            MusicTagStub.pathTrackDictionary[path1] = 1;
+            MusicTagStub.pathTrackCountDictionary[path1] = 2;
+            MusicTagStub.pathTitleDictionary[path1] = "title1";
+
+            MusicTagStub.pathAlbumDictionary[path2] = "album1";
+            MusicTagStub.pathDiscDictionary[path2] = 1;
+            MusicTagStub.pathDiscCountDictionary[path2] = 1;
+            MusicTagStub.pathTrackDictionary[path2] = 2;
+            MusicTagStub.pathTrackCountDictionary[path2] = 2;
+            MusicTagStub.pathTitleDictionary[path2] = "title2";
+
+            //exercise
+            Dictionary<string, Album> dict = sut.create(files);
+
+            //verify
+            mock.Received().notifyProgress(2, 1);
+            mock.Received().notifyProgress(2, 2);
         }
 
     }

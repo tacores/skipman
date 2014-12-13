@@ -30,7 +30,7 @@
         {
             this.buttonSelect = new System.Windows.Forms.Button();
             this.listBoxAlbums = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelFolder = new System.Windows.Forms.Label();
             this.buttonAnalyze = new System.Windows.Forms.Button();
             this.buttonAll = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,6 +39,8 @@
             this.Disc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Track = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.progressBarScan = new System.Windows.Forms.ProgressBar();
+            this.labelProgress = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetail)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,18 +64,18 @@
             this.listBoxAlbums.TabIndex = 3;
             this.listBoxAlbums.SelectedIndexChanged += new System.EventHandler(this.listBoxAlbums_SelectedIndexChanged);
             // 
-            // label1
+            // labelFolder
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 12);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "label1";
+            this.labelFolder.AutoSize = true;
+            this.labelFolder.Location = new System.Drawing.Point(96, 17);
+            this.labelFolder.Name = "labelFolder";
+            this.labelFolder.Size = new System.Drawing.Size(35, 12);
+            this.labelFolder.TabIndex = 5;
+            this.labelFolder.Text = "label1";
             // 
             // buttonAnalyze
             // 
-            this.buttonAnalyze.Location = new System.Drawing.Point(213, 12);
+            this.buttonAnalyze.Location = new System.Drawing.Point(15, 12);
             this.buttonAnalyze.Name = "buttonAnalyze";
             this.buttonAnalyze.Size = new System.Drawing.Size(75, 23);
             this.buttonAnalyze.TabIndex = 6;
@@ -140,17 +142,36 @@
             this.Title.Name = "Title";
             this.Title.Width = 400;
             // 
+            // progressBarScan
+            // 
+            this.progressBarScan.Location = new System.Drawing.Point(246, 12);
+            this.progressBarScan.Name = "progressBarScan";
+            this.progressBarScan.Size = new System.Drawing.Size(230, 23);
+            this.progressBarScan.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBarScan.TabIndex = 11;
+            // 
+            // labelProgress
+            // 
+            this.labelProgress.AutoSize = true;
+            this.labelProgress.Location = new System.Drawing.Point(482, 17);
+            this.labelProgress.Name = "labelProgress";
+            this.labelProgress.Size = new System.Drawing.Size(17, 12);
+            this.labelProgress.TabIndex = 12;
+            this.labelProgress.Text = "   ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(780, 437);
+            this.Controls.Add(this.labelProgress);
+            this.Controls.Add(this.progressBarScan);
             this.Controls.Add(this.dataGridViewDetail);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.buttonAll);
             this.Controls.Add(this.buttonAnalyze);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelFolder);
             this.Controls.Add(this.listBoxAlbums);
             this.Controls.Add(this.buttonSelect);
             this.Name = "Form1";
@@ -165,7 +186,7 @@
 
         private System.Windows.Forms.Button buttonSelect;
         private System.Windows.Forms.ListBox listBoxAlbums;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelFolder;
         private System.Windows.Forms.Button buttonAnalyze;
         private System.Windows.Forms.Button buttonAll;
         private System.Windows.Forms.Label label2;
@@ -174,6 +195,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Disc;
         private System.Windows.Forms.DataGridViewTextBoxColumn Track;
         private System.Windows.Forms.DataGridViewTextBoxColumn Title;
+        private System.Windows.Forms.ProgressBar progressBarScan;
+        private System.Windows.Forms.Label labelProgress;
     }
 }
 

@@ -6,10 +6,11 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace skipman
 {
-    public partial class Form1 : Form
+    public partial class Form1 : Form, ProgressListener
     {
         public Form1()
         {
@@ -26,7 +27,7 @@ namespace skipman
         {
             try
             {
-                label1.Text = fileSystem.getWalkmanDriveName() + "Music";
+                labelFolder.Text = fileSystem.getWalkmanDriveName() + "Music";
             }
             catch (Exception)
             {
@@ -39,15 +40,28 @@ namespace skipman
 
         private void scanMusicFolder()
         {
-            AlbumDictionaryCreator creator = new AlbumDictionaryCreatorImpl();
+            AlbumDictionaryCreator creator = new AlbumDictionaryCreatorImpl(this);
 
-            string[] files = fileSystem.getAllFileNames(label1.Text);
+            string[] files = fileSystem.getAllFileNames(labelFolder.Text);
             albums = creator.create(files);
+
+            updateAlbumList();
+        }
+
+        delegate void delegateVoidVoid();
+        private void updateAlbumList()
+        {
+            if (this.InvokeRequired)
+            {
+                delegateVoidVoid dlg = new delegateVoidVoid(updateAlbumList);
+                this.Invoke(dlg);
+                return;
+            }
 
             listBoxAlbums.Items.Clear();
             foreach (KeyValuePair<string, Album> pair in albums)
             {
-                if(pair.Value.needCorrect)
+                if (pair.Value.needCorrect)
                 {
                     listBoxAlbums.Items.Add(pair.Value.title);
                 }
@@ -60,7 +74,8 @@ namespace skipman
 
         private void buttonAnalyze_Click(object sender, EventArgs e)
         {
-            scanMusicFolder();
+            Thread worker = new Thread(this.scanMusicFolder);
+            worker.Start();
         }
 
         private void listBoxAlbums_SelectedIndexChanged(object sender, EventArgs e)
@@ -103,7 +118,7 @@ namespace skipman
                 resetter.reset(album);
                 removedAlbums.Add(albumName);
             }
-            catch (Exception e)
+            catch (Exception )
             {
                 MessageBox.Show(albumName + " を処理中にエラーが発生しました");
                 throw;
@@ -129,6 +144,26 @@ namespace skipman
                 listBoxAlbums.Items.Remove(name);
             }
             removedAlbums.Clear();
+        }
+
+        delegate void delegateNotifyProgress(int all, int done);
+
+        public void notifyProgress(int all, int done)
+        {
+            if(this.InvokeRequired)
+            {
+                delegateNotifyProgress dlg = new delegateNotifyProgress(notifyProgress);
+                this.Invoke(dlg, all, done);
+                return;
+            }
+
+            labelProgress.Text = "(" + done + "/" + all + ")";
+            progressBarScan.Minimum = 0;
+            progressBarScan.Maximum = all;
+            progressBarScan.Value = done;
+
+            labelProgress.Update();
+            progressBarScan.Update();
         }
     }
 }
