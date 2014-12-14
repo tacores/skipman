@@ -10,12 +10,18 @@ using System.Threading;
 
 namespace skipman
 {
+    /// <summary>
+    /// メインダイアログ
+    /// </summary>
     public partial class Form1 : Form, ProgressListener
     {
         private Dictionary<string, Album> albums;
         private List<string> removedAlbums;
         private FileSystem fileSystem;
 
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
         public Form1()
         {
             InitializeComponent();
@@ -26,6 +32,9 @@ namespace skipman
             searchWalkmanDrive();
         }
 
+        /// <summary>
+        /// walkmanドライブ検索
+        /// </summary>
         private void searchWalkmanDrive()
         {
             try
@@ -39,6 +48,20 @@ namespace skipman
             }
         }
 
+        /// <summary>
+        /// スキャンボタン押下ハンドラ
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonAnalyze_Click(object sender, EventArgs e)
+        {
+            Thread worker = new Thread(this.scanMusicFolder);
+            worker.Start();
+        }
+
+        /// <summary>
+        /// Musicフォルダスキャン
+        /// </summary>
         private void scanMusicFolder()
         {
             string[] files = fileSystem.getAllFileNames(labelFolder.Text);
@@ -48,6 +71,9 @@ namespace skipman
         }
 
         delegate void delegateVoidVoid();
+        /// <summary>
+        /// アルバム一覧リスト更新
+        /// </summary>
         private void updateAlbumList()
         {
             if (this.InvokeRequired)
@@ -71,12 +97,11 @@ namespace skipman
             }
         }
 
-        private void buttonAnalyze_Click(object sender, EventArgs e)
-        {
-            Thread worker = new Thread(this.scanMusicFolder);
-            worker.Start();
-        }
-
+        /// <summary>
+        /// アルバム一覧リストの項目選択ハンドラ
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void listBoxAlbums_SelectedIndexChanged(object sender, EventArgs e)
         {
             dataGridViewDetail.Rows.Clear();
@@ -87,8 +112,8 @@ namespace skipman
                 dataGridViewDetail.Rows.Clear();
                 return;
             }
-            Album album = albums[albumName];
 
+            Album album = albums[albumName];
             int newTrack = 1;
             for (uint i = 1; album != null && i <= album.DiscCount; ++i)
             {
@@ -96,11 +121,16 @@ namespace skipman
                 for (uint j = 1; disc != null && j <= disc.TrackCount; ++j)
                 {
                     Track track = disc.getTrack(j);
-                    dataGridViewDetail.Rows.Add(disc.DiskNum, track.TrackNum, newTrack++, track.Name, track.Artist);
+                    dataGridViewDetail.Rows.Add(disc.DiskNum, track.TrackNum, newTrack++, track.Title, track.Artist);
                 }
             }
         }
 
+        /// <summary>
+        /// 「選択中のアルバムを再採番」ボタン押下ハンドラ
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonSelect_Click(object sender, EventArgs e)
         {
             string albumName = (string)listBoxAlbums.SelectedItem;
@@ -109,6 +139,25 @@ namespace skipman
             MessageBox.Show("完了しました");
         }
 
+        /// <summary>
+        /// 「左の全アルバムを再採番」ボタン押下ハンドラ
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonAll_Click(object sender, EventArgs e)
+        {
+            foreach (string albumName in listBoxAlbums.Items)
+            {
+                overwriteAlbum(albumName);
+            }
+            removeAlbumList();
+            MessageBox.Show("全て完了しました");
+        }
+
+        /// <summary>
+        /// アルバム上書き
+        /// </summary>
+        /// <param name="albumName">上書きするアルバム名</param>
         private void overwriteAlbum(string albumName)
         {
             TrackResetter resetter = new TrackResetter();
@@ -125,16 +174,9 @@ namespace skipman
             }
         }
 
-        private void buttonAll_Click(object sender, EventArgs e)
-        {
-            foreach (string albumName in listBoxAlbums.Items)
-            {
-                overwriteAlbum(albumName);
-            }
-            removeAlbumList();
-            MessageBox.Show("全て完了しました");
-        }
-
+        /// <summary>
+        /// 再採番済みのアルバムをアルバム一覧から削除
+        /// </summary>
         private void removeAlbumList()
         {
             foreach (string name in removedAlbums)
@@ -145,6 +187,11 @@ namespace skipman
         }
 
         delegate void delegateNotifyProgress(int all, int done);
+        /// <summary>
+        /// スキャン進捗通知
+        /// </summary>
+        /// <param name="all"></param>
+        /// <param name="done"></param>
         public void notifyProgress(int all, int done)
         {
             if(this.InvokeRequired)

@@ -24,19 +24,19 @@ namespace skipman
                 {
                     using (MusicTag tagFile = MusicTagFactory.create(file))
                     {
-                        if (tagFile.disc == 0 || tagFile.discCount == 0 || tagFile.track == 0 || tagFile.trackCount == 0)
+                        if (tagFile.Disc == 0 || tagFile.DiscCount == 0 || tagFile.Track == 0 || tagFile.TrackCount == 0)
                         {
                             continue;
                         }
 
                         Album al;
-                        if (!dict.ContainsKey(tagFile.album))
+                        if (!dict.ContainsKey(tagFile.AlbumTitle))
                         {
-                            dict[tagFile.album] = new Album(tagFile.album, tagFile.discCount);
+                            dict[tagFile.AlbumTitle] = new Album(tagFile.AlbumTitle, tagFile.DiscCount);
                         }
 
-                        al = dict[tagFile.album];
-                        al.addTrack(tagFile.disc, tagFile.track, tagFile.trackCount, tagFile.title, file, tagFile.artist);
+                        al = dict[tagFile.AlbumTitle];
+                        al.addTrack(tagFile.Disc, tagFile.Track, tagFile.TrackCount, tagFile.Title, file, tagFile.Artist);
                     }
                 }
                 catch (Exception)

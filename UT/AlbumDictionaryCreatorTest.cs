@@ -21,7 +21,7 @@ namespace skipmanUT
         {
             sut = new AlbumDictionaryCreatorImpl(new ProgressListenerStub());
             stub = new MusicTagStub();
-            MusicTagFactory.set(stub);
+            MusicTagFactory.FTO_set(stub);
         }
 
         [Test]

@@ -23,47 +23,47 @@ namespace skipmanUT.stub
         {
         }
 
-        public string album
+        public string AlbumTitle
         {
-            get { return pathAlbumDictionary[path]; }
-            set { pathAlbumDictionary[path] = value;  }
+            get { return pathAlbumDictionary[FilePath]; }
+            set { pathAlbumDictionary[FilePath] = value;  }
         }
 
-        public uint disc
+        public uint Disc
         {
-            get { return pathDiscDictionary[path]; }
-            set { pathDiscDictionary[path] = value; }
+            get { return pathDiscDictionary[FilePath]; }
+            set { pathDiscDictionary[FilePath] = value; }
         }
-        public uint discCount
+        public uint DiscCount
         {
-            get { return pathDiscCountDictionary[path]; }
-            set { pathDiscCountDictionary[path] = value; }
-        }
-
-        public uint track
-        {
-            get { return pathTrackDictionary[path]; }
-            set { pathTrackDictionary[path] = value; }
-        }
-        public uint trackCount
-        {
-            get { return pathTrackCountDictionary[path]; }
-            set { pathTrackCountDictionary[path] = value; }
+            get { return pathDiscCountDictionary[FilePath]; }
+            set { pathDiscCountDictionary[FilePath] = value; }
         }
 
-        public string title
+        public uint Track
         {
-            get { return pathTitleDictionary[path]; }
-            set { pathTitleDictionary[path] = value; }
+            get { return pathTrackDictionary[FilePath]; }
+            set { pathTrackDictionary[FilePath] = value; }
+        }
+        public uint TrackCount
+        {
+            get { return pathTrackCountDictionary[FilePath]; }
+            set { pathTrackCountDictionary[FilePath] = value; }
         }
 
-        public string path
+        public string Title
+        {
+            get { return pathTitleDictionary[FilePath]; }
+            set { pathTitleDictionary[FilePath] = value; }
+        }
+
+        public string FilePath
         {
             get;
             set;
         }
 
-        public string artist
+        public string Artist
         {
             get;
             set;
@@ -71,7 +71,7 @@ namespace skipmanUT.stub
 
         public void save()
         {
-            pathTrackDictionary[path] = track;
+            pathTrackDictionary[FilePath] = Track;
         }
 
         static public Dictionary<string, string> pathAlbumDictionary;

@@ -38,8 +38,8 @@ namespace skipmanUT
             Track expect = new Track(10, "name", "path", "artist");
             Track ret = sut.getTrack(10);
             Assert.AreEqual(expect.TrackNum, ret.TrackNum);
-            Assert.AreEqual(expect.Name, ret.Name);
-            Assert.AreEqual(expect.Path, ret.Path);
+            Assert.AreEqual(expect.Title, ret.Title);
+            Assert.AreEqual(expect.FilePath, ret.FilePath);
             Assert.AreEqual(expect.Artist, ret.Artist);
         }
 

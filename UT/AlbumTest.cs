@@ -47,8 +47,8 @@ namespace skipmanUT
             Track track = sut.getDisc(1).getTrack(10);
 
             Assert.AreEqual(10, track.TrackNum);
-            Assert.AreEqual("track1", track.Name);
-            Assert.AreEqual("path1", track.Path);
+            Assert.AreEqual("track1", track.Title);
+            Assert.AreEqual("path1", track.FilePath);
             Assert.AreEqual("artist1", track.Artist);
         }
 
@@ -61,8 +61,8 @@ namespace skipmanUT
             Track track = sut.getDisc(1).getTrack(1);
 
             Assert.AreEqual(1, track.TrackNum);
-            Assert.AreEqual("track1", track.Name);
-            Assert.AreEqual("path1", track.Path);
+            Assert.AreEqual("track1", track.Title);
+            Assert.AreEqual("path1", track.FilePath);
             Assert.AreEqual("artist1", track.Artist);
         }
 
@@ -75,8 +75,8 @@ namespace skipmanUT
             Track track = sut.getDisc(1).getTrack(15);
 
             Assert.AreEqual(15, track.TrackNum);
-            Assert.AreEqual("track1", track.Name);
-            Assert.AreEqual("path1", track.Path);
+            Assert.AreEqual("track1", track.Title);
+            Assert.AreEqual("path1", track.FilePath);
             Assert.AreEqual("artist1", track.Artist);
         }
 
@@ -127,8 +127,8 @@ namespace skipmanUT
             Track track2 = sut.getDisc(1).getTrack(11);
 
             Assert.AreEqual(11, track2.TrackNum);
-            Assert.AreEqual("track2", track2.Name);
-            Assert.AreEqual("path2", track2.Path);
+            Assert.AreEqual("track2", track2.Title);
+            Assert.AreEqual("path2", track2.FilePath);
             Assert.AreEqual("artist2", track2.Artist);
         }
 
@@ -142,8 +142,8 @@ namespace skipmanUT
             Track track2 = sut.getDisc(2).getTrack(11);
 
             Assert.AreEqual(11, track2.TrackNum);
-            Assert.AreEqual("track2", track2.Name);
-            Assert.AreEqual("path2", track2.Path);
+            Assert.AreEqual("track2", track2.Title);
+            Assert.AreEqual("path2", track2.FilePath);
             Assert.AreEqual("artist2", track2.Artist);
         }
 

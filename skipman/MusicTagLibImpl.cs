@@ -5,6 +5,9 @@ using System.Text;
 
 namespace skipman
 {
+    /// <summary>
+    /// 音楽ファイルタグクラスのTagLib#実装
+    /// </summary>
     class MusicTagLibImpl : MusicTag
     {
         public MusicTagLibImpl(string filePath)
@@ -17,47 +20,47 @@ namespace skipman
             tagFile.Dispose();
         }
 
-        public string album
+        public string AlbumTitle
         {
             get { return tagFile.Tag.Album; }
             set { tagFile.Tag.Album = value;  }
         }
 
-        public uint disc
+        public uint Disc
         {
             get { return tagFile.Tag.Disc; }
             set { tagFile.Tag.Disc = value; }
         }
-        public uint discCount
+        public uint DiscCount
         {
             get { return tagFile.Tag.DiscCount; }
             set { tagFile.Tag.DiscCount = value; }
         }
 
-        public uint track
+        public uint Track
         {
             get { return tagFile.Tag.Track; }
             set { tagFile.Tag.Track = value; }
         }
-        public uint trackCount
+        public uint TrackCount
         {
             get { return tagFile.Tag.TrackCount; }
             set { tagFile.Tag.TrackCount = value; }
         }
 
-        public string title
+        public string Title
         {
             get { return tagFile.Tag.Title; }
             set { tagFile.Tag.Title = value;  }
         }
 
-        public string path
+        public string FilePath
         {
             get;
             set;
         }
 
-        public string artist
+        public string Artist
         {
             get
             {

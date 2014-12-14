@@ -5,54 +5,69 @@ using System.Text;
 
 namespace skipman
 {
+    /// <summary>
+    /// 音楽ファイルタグ
+    /// 1曲の音楽ファイルに埋め込まれているタグ情報
+    /// </summary>
     public interface MusicTag : IDisposable
     {
-        string album
+        /// アルバムタイトル
+        string AlbumTitle
         {
             get;
             set;
         }
 
-        uint disc
-        {
-            get;
-            set;
-        }
-        uint discCount
-        {
-            get;
-            set;
-        }
-
-        uint track
-        {
-            get;
-            set;
-        }
-        uint trackCount
+        /// ディスク番号
+        uint Disc
         {
             get;
             set;
         }
 
-        string title
+        /// アルバムのディスク数
+        uint DiscCount
         {
             get;
             set;
         }
 
-        string path
+        /// トラック番号
+        uint Track
         {
             get;
             set;
         }
 
-        string artist
+        /// ディスクのトラック数
+        uint TrackCount
         {
             get;
             set;
         }
 
+        /// タイトル
+        string Title
+        {
+            get;
+            set;
+        }
+
+        /// アーティスト
+        string Artist
+        {
+            get;
+            set;
+        }
+
+        /// ファイルパス（ファイルに埋め込まれている情報ではない）
+        string FilePath
+        {
+            get;
+            set;
+        }
+
+        /// ファイル保存（ファイルに埋め込まれているタグ情報の上書き）
         void save();
     }
 }

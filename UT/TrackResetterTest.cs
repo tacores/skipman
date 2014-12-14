@@ -20,7 +20,7 @@ namespace skipmanUT
         {
             sut = new TrackResetter();
             stub = new MusicTagStub();
-            MusicTagFactory.set(stub);
+            MusicTagFactory.FTO_set(stub);
         }
 
         [Test]

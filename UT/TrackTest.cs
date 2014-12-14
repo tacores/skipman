@@ -24,7 +24,7 @@ namespace skipmanUT
         {
             Track sut = new Track(0, "name", "", "");
 
-            Assert.AreEqual("name", sut.Name);
+            Assert.AreEqual("name", sut.Title);
         }
 
         [Test]
@@ -32,7 +32,7 @@ namespace skipmanUT
         {
             Track sut = new Track(0, "", "path", "");
 
-            Assert.AreEqual("path", sut.Path);
+            Assert.AreEqual("path", sut.FilePath);
         }
 
         [Test]
@@ -48,18 +48,18 @@ namespace skipmanUT
         public void ChangeName()
         {
             Track sut = new Track(0, "name", "", "");
-            sut.Name = "newname";
+            sut.Title = "newname";
 
-            Assert.AreEqual("newname", sut.Name);
+            Assert.AreEqual("newname", sut.Title);
         }
 
         [Test]
         public void ChangePath()
         {
             Track sut = new Track(0, "", "path", "");
-            sut.Path = "newpath";
+            sut.FilePath = "newpath";
 
-            Assert.AreEqual("newpath", sut.Path);
+            Assert.AreEqual("newpath", sut.FilePath);
         }
 
         [Test]

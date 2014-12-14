@@ -5,8 +5,15 @@ using System.Text;
 
 namespace skipman
 {
+    /// <summary>
+    /// トラック番号リセッター
+    /// </summary>
     public class TrackResetter
     {
+        /// <summary>
+        /// トラック番号再採番
+        /// </summary>
+        /// <param name="album">再採番するアルバム</param>
         public void reset(Album album)
         {
             uint newTrack = 1;
@@ -17,9 +24,9 @@ namespace skipman
                 for (uint j = 1; disc != null && j <= disc.TrackCount; ++j)
                 {
                     Track track = disc.getTrack(j);
-                    using (MusicTag tagFile = MusicTagFactory.create(track.Path))
+                    using (MusicTag tagFile = MusicTagFactory.create(track.FilePath))
                     {
-                        tagFile.track = newTrack++;
+                        tagFile.Track = newTrack++;
                         tagFile.save();
                     }
                 }

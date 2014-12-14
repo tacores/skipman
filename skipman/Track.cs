@@ -5,34 +5,56 @@ using System.Text;
 
 namespace skipman
 {
+    /// <summary>
+    /// トラック
+    /// </summary>
     public class Track
     {
-        public Track(uint track, string name, string path, string artist)
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        /// <param name="track">トラック番号</param>
+        /// <param name="title">曲名</param>
+        /// <param name="filePath">ファイルパス</param>
+        /// <param name="artist">アーティスト</param>
+        public Track(uint track, string title, string filePath, string artist)
         {
             TrackNum = track;
-            Name = name;
-            Path = path;
+            Title = title;
+            FilePath = filePath;
             Artist = artist;
         }
 
-        public string Path
+        /// <summary>
+        /// ファイルパス
+        /// </summary>
+        public string FilePath
         {
             get;
             set;
         }
 
-        public string Name
+        /// <summary>
+        /// 曲名
+        /// </summary>
+        public string Title
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// トラック番号
+        /// </summary>
         public uint TrackNum
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// アーティスト
+        /// </summary>
         public string Artist
         {
             get;
