@@ -6,12 +6,12 @@ using System.Text;
 namespace skipman
 {
     /// <summary>
-    /// アルバム名→アルバムクラスの辞書クリエイタ
+    /// アルバム名 -> アルバムクラスのディクショナリを作成する
     /// </summary>
     interface AlbumDictionaryCreator
     {
         /// <summary>
-        /// 辞書作成
+        /// ディクショナリ作成
         /// </summary>
         /// <param name="files">ファイルパスの配列</param>
         Dictionary<string, Album> create(string[] files);

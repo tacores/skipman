@@ -6,8 +6,8 @@ using System.Text;
 namespace skipman
 {
     /// <summary>
-    /// 音楽ファイルタグ
-    /// 1曲の音楽ファイルに埋め込まれているタグ情報
+    /// 音楽ファイルタグを表現するインターフェイス。
+    /// 1曲の音楽ファイルに埋め込まれているタグ情報。
     /// </summary>
     public interface MusicTag : IDisposable
     {

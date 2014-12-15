@@ -6,7 +6,7 @@ using System.Text;
 namespace skipman
 {
     /// <summary>
-    /// 音楽ファイルタグのファクトリ
+    /// 音楽ファイルタグのファクトリクラス
     /// </summary>
     public class MusicTagFactory
     {
@@ -29,12 +29,12 @@ namespace skipman
         }
 
         /// <summary>
-        /// 音楽ファイルタグクラス設定（ユニットテスト用）
+        /// 音楽ファイルタグクラス設定（For Test Only）
         /// </summary>
         public static void FTO_set(MusicTag musicTag)
         {
             MusicTagFactory.musicTag = musicTag;
         }
-        static private MusicTag musicTag;   //ユニットテスト用
+        static private MusicTag musicTag;   //テスト用
     }
 }

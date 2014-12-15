@@ -6,7 +6,7 @@ using System.Text;
 namespace skipman
 {
     /// <summary>
-    /// ディスク
+    /// ディスクを表現するクラス。CD1枚に対応する。ディスクには1曲以上のトラックが含まれる。
     /// </summary>
     public class Disc
     {
@@ -35,7 +35,7 @@ namespace skipman
         }
 
         /// <summary>
-        /// トラック取得
+        /// トラック番号からトラックを取得する。
         /// </summary>
         /// <param name="track">トラック番号</param>
         /// <returns>トラック</returns>

@@ -6,12 +6,13 @@ using System.Text;
 namespace skipman
 {
     /// <summary>
-    /// トラック番号リセッター
+    /// トラック番号を再採番するクラス
     /// </summary>
     public class TrackResetter
     {
         /// <summary>
-        /// トラック番号再採番
+        /// トラック番号を再採番する。
+        /// 第1ソートキーをディスク番号、第2ソートキーをトラック番号として1から順に再採番する。
         /// </summary>
         /// <param name="album">再採番するアルバム</param>
         public void reset(Album album)

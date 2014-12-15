@@ -36,6 +36,14 @@ namespace skipmanUT
         }
 
         [Test]
+        public void Constructor_Artist()
+        {
+            Track sut = new Track(0, "", "", "artist");
+
+            Assert.AreEqual("artist", sut.Artist);
+        }
+
+        [Test]
         public void ChangeTrack()
         {
             Track sut = new Track(100, "", "", "");
@@ -65,10 +73,10 @@ namespace skipmanUT
         [Test]
         public void ChangeArtist()
         {
-            Track sut = new Track(0, "", "path", "");
-            sut.Artist = "artist-name";
+            Track sut = new Track(0, "", "", "artist");
+            sut.Artist = "newartist";
 
-            Assert.AreEqual("artist-name", sut.Artist);
+            Assert.AreEqual("newartist", sut.Artist);
         }
     }
 }

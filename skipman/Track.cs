@@ -6,7 +6,7 @@ using System.Text;
 namespace skipman
 {
     /// <summary>
-    /// トラック
+    /// トラックを表現するクラス。トラックはディスク内の1曲に対応する。
     /// </summary>
     public class Track
     {

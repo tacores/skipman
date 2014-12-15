@@ -6,7 +6,7 @@ using System.Text;
 namespace skipman
 {
     /// <summary>
-    /// アルバム
+    /// アルバムを表現するクラス。アルバムには1枚以上のディスクが含まれる。
     /// </summary>
     public class Album
     {
@@ -22,7 +22,7 @@ namespace skipman
             discs = new Disc[discCount];
             dict = new Dictionary<uint, string>();
             AllTrackCount = 0;
-            needCorrect = false;
+            TrackNumberCorrectIsNeeded = false;
         }
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace skipman
 
             if (dict.ContainsKey(track))
             {
-                needCorrect = true;
+                TrackNumberCorrectIsNeeded = true;
             }
             else
             {
@@ -72,7 +72,7 @@ namespace skipman
         }
 
         /// <summary>
-        /// 全トラック数
+        /// トラック総数
         /// </summary>
         public uint AllTrackCount
         {
@@ -82,16 +82,16 @@ namespace skipman
 
         private Dictionary<uint, string> dict;
         /// <summary>
-        /// 修正が必要かどうか
+        /// トラック番号の修正が必要かどうか
         /// </summary>
-        public bool needCorrect
+        public bool TrackNumberCorrectIsNeeded
         {
             get;
             set;
         }
 
         /// <summary>
-        /// ディスク取得
+        /// ディスク番号から、ディスククラスのインスタンスを取得する
         /// </summary>
         /// <param name="disc">ディスク番号</param>
         /// <returns>ディスク</returns>

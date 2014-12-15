@@ -16,7 +16,6 @@ namespace skipman
     public partial class Form1 : Form, ProgressListener
     {
         private Dictionary<string, Album> albums;
-        private List<string> removedAlbums;
         private FileSystem fileSystem;
 
         /// <summary>
@@ -26,7 +25,6 @@ namespace skipman
         {
             InitializeComponent();
 
-            removedAlbums = new List<string>();
             fileSystem = new FileSystemImpl();
 
             searchWalkmanDrive();
@@ -86,7 +84,7 @@ namespace skipman
             listBoxAlbums.Items.Clear();
             foreach (KeyValuePair<string, Album> pair in albums)
             {
-                if (pair.Value.needCorrect)
+                if (pair.Value.TrackNumberCorrectIsNeeded)
                 {
                     listBoxAlbums.Items.Add(pair.Value.Title);
                 }
@@ -135,7 +133,7 @@ namespace skipman
         {
             string albumName = (string)listBoxAlbums.SelectedItem;
             overwriteAlbum(albumName);
-            removeAlbumList();
+            removeAlbumList(albumName);
             MessageBox.Show("完了しました");
         }
 
@@ -149,8 +147,8 @@ namespace skipman
             foreach (string albumName in listBoxAlbums.Items)
             {
                 overwriteAlbum(albumName);
+                removeAlbumList(albumName);
             }
-            removeAlbumList();
             MessageBox.Show("全て完了しました");
         }
 
@@ -165,7 +163,6 @@ namespace skipman
             {
                 Album album = albums[albumName];
                 resetter.reset(album);
-                removedAlbums.Add(albumName);
             }
             catch (Exception )
             {
@@ -177,13 +174,9 @@ namespace skipman
         /// <summary>
         /// 再採番済みのアルバムをアルバム一覧から削除
         /// </summary>
-        private void removeAlbumList()
+        private void removeAlbumList(string albumName)
         {
-            foreach (string name in removedAlbums)
-            {
-                listBoxAlbums.Items.Remove(name);
-            }
-            removedAlbums.Clear();
+            listBoxAlbums.Items.Remove(albumName);
         }
 
         delegate void delegateNotifyProgress(int all, int done);

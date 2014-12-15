@@ -155,7 +155,7 @@ namespace skipmanUT
             sut.addTrack(1, 10, 15, "track1", "path1", "artist1");
             sut.addTrack(2, 11, 15, "track2", "path2", "artist2");
 
-            Assert.AreEqual(false, sut.needCorrect);
+            Assert.AreEqual(false, sut.TrackNumberCorrectIsNeeded);
         }
 
         [Test]
@@ -166,7 +166,7 @@ namespace skipmanUT
             sut.addTrack(1, 10, 15, "track1", "path1", "artist1");
             sut.addTrack(2, 10, 15, "track2", "path2", "artist2");
 
-            Assert.AreEqual(true, sut.needCorrect);
+            Assert.AreEqual(true, sut.TrackNumberCorrectIsNeeded);
         }
 
     }
