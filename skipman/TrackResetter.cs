@@ -25,6 +25,10 @@ namespace skipman
                 for (uint j = 1; disc != null && j <= disc.TrackCount; ++j)
                 {
                     Track track = disc.getTrack(j);
+                    if (track == null)
+                    {
+                        continue;
+                    }
                     using (MusicTag tagFile = MusicTagFactory.create(track.FilePath))
                     {
                         tagFile.Track = newTrack++;

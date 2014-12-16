@@ -44,8 +44,8 @@ namespace skipmanUT
             Album sut = new Album("", 3);
 
             sut.addTrack(1, 10, 15, "track1", "path1", "artist1");
-            Track track = sut.getDisc(1).getTrack(10);
 
+            Track track = sut.getDisc(1).getTrack(10);
             Assert.AreEqual(10, track.TrackNum);
             Assert.AreEqual("track1", track.Title);
             Assert.AreEqual("path1", track.FilePath);
@@ -58,8 +58,8 @@ namespace skipmanUT
             Album sut = new Album("", 3);
 
             sut.addTrack(1, 1, 15, "track1", "path1", "artist1");
-            Track track = sut.getDisc(1).getTrack(1);
 
+            Track track = sut.getDisc(1).getTrack(1);
             Assert.AreEqual(1, track.TrackNum);
             Assert.AreEqual("track1", track.Title);
             Assert.AreEqual("path1", track.FilePath);
@@ -169,5 +169,15 @@ namespace skipmanUT
             Assert.AreEqual(true, sut.TrackNumberCorrectIsNeeded);
         }
 
+        [Test]
+        public void AddTrack_OnSameDisc_SameTrack_NeedCorrect()
+        {
+            Album sut = new Album("", 3);
+
+            sut.addTrack(1, 10, 15, "track1", "path1", "artist1");
+            sut.addTrack(1, 10, 15, "track2", "path2", "artist2");
+
+            Assert.AreEqual(true, sut.TrackNumberCorrectIsNeeded);
+        }
     }
 }
