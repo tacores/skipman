@@ -61,12 +61,15 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormConductor.cs" />
+    <Compile Include="FormOwner.cs" />
     <Compile Include="MusicTag.cs" />
     <Compile Include="MusicTagLibImpl.cs" />
     <Compile Include="MusicTagFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProgressListener.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StateProvider.cs" />
     <Compile Include="Track.cs" />
     <Compile Include="TrackResetter.cs" />
     <EmbeddedResource Include="Form1.resx">
