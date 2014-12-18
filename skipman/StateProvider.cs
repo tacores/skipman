@@ -7,12 +7,24 @@ namespace skipman
 {
     public interface StateProvider
     {
-        bool isMusicFolderFound();
+        bool IsMusicFolderSet
+        {
+            get;
+        }
 
-        bool isScanning();
+        bool IsScanning
+        {
+            get;
+        }
 
-        bool isAnyAlbumSelected();
+        bool IsAnyAlbumSelected
+        {
+            get;
+        }
 
-        bool isThereAnyAlbum();
+        bool IsThrereAnyAlbumNeedToReset
+        {
+            get;
+        }
     }
 }

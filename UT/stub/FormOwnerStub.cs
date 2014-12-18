@@ -3,23 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace skipman
+namespace skipmanUT.stub
 {
-    public interface FormOwner
+    using skipman;
+
+    class FormOwnerStub : FormOwner
     {
-        bool ScanButtonEnabled
+        public bool ScanButtonEnabled
         {
             get;
             set;
         }
 
-        bool SelectedAlbumButtonEnabled
+        public bool SelectedAlbumButtonEnabled
         {
             get;
             set;
         }
 
-        bool AllAlbumButtunEnabled
+        public bool AllAlbumButtunEnabled
         {
             get;
             set;
