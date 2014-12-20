@@ -21,6 +21,7 @@ namespace skipman
             updateScanButton();
             updateSelectedButton();
             updateAllButton();
+            updateRemoveButton();
         }
 
         private void updateScanButton()
@@ -51,11 +52,23 @@ namespace skipman
         {
             if (provider.IsThrereAnyAlbumNeedToReset && !provider.IsScanning)
             {
-                owner.AllAlbumButtunEnabled = true;
+                owner.AllAlbumButtonEnabled = true;
             }
             else
             {
-                owner.AllAlbumButtunEnabled = false;
+                owner.AllAlbumButtonEnabled = false;
+            }
+        }
+
+        private void updateRemoveButton()
+        {
+            if (provider.IsAnyAlbumSelected && !provider.IsScanning)
+            {
+                owner.RemoveButtonEnabled = true;
+            }
+            else
+            {
+                owner.RemoveButtonEnabled = false;
             }
         }
     }

@@ -45,7 +45,7 @@ namespace skipmanUT
         {
             sut.update();
 
-            Assert.AreEqual(false, formOwner.AllAlbumButtunEnabled);
+            Assert.AreEqual(false, formOwner.AllAlbumButtonEnabled);
         }
 
         [Test]
@@ -122,7 +122,7 @@ namespace skipmanUT
 
             sut.update();
 
-            Assert.AreEqual(true, formOwner.AllAlbumButtunEnabled);
+            Assert.AreEqual(true, formOwner.AllAlbumButtonEnabled);
         }
 
         [Test]
@@ -133,7 +133,7 @@ namespace skipmanUT
 
             sut.update();
 
-            Assert.AreEqual(false, formOwner.AllAlbumButtunEnabled);
+            Assert.AreEqual(false, formOwner.AllAlbumButtonEnabled);
         }
 
         [Test]
@@ -145,7 +145,40 @@ namespace skipmanUT
             stateProvider.IsThrereAnyAlbumNeedToReset = false;
             sut.update();
 
-            Assert.AreEqual(false, formOwner.AllAlbumButtunEnabled);
+            Assert.AreEqual(false, formOwner.AllAlbumButtonEnabled);
+        }
+
+        [Test]
+        public void AlbumIsSelected_RemoveButtonEnabled()
+        {
+            stateProvider.IsAnyAlbumSelected = true;
+
+            sut.update();
+
+            Assert.AreEqual(true, formOwner.RemoveButtonEnabled);
+        }
+
+        [Test]
+        public void IfScanIsRunning_RemoveButtonDisabled()
+        {
+            stateProvider.IsAnyAlbumSelected = true;
+            stateProvider.IsScanning = true;
+
+            sut.update();
+
+            Assert.AreEqual(false, formOwner.RemoveButtonEnabled);
+        }
+
+        [Test]
+        public void BecomesNotSelected_RemoveButtonDisabled()
+        {
+            stateProvider.IsAnyAlbumSelected = true;
+            sut.update();
+
+            stateProvider.IsAnyAlbumSelected = false;
+            sut.update();
+
+            Assert.AreEqual(false, formOwner.RemoveButtonEnabled);
         }
     }
 }

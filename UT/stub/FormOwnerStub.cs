@@ -21,7 +21,13 @@ namespace skipmanUT.stub
             set;
         }
 
-        public bool AllAlbumButtunEnabled
+        public bool AllAlbumButtonEnabled
+        {
+            get;
+            set;
+        }
+
+        public bool RemoveButtonEnabled
         {
             get;
             set;

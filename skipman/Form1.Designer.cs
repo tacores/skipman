@@ -43,6 +43,7 @@
             this.NewTrack = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Artist = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonRemove = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetail)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +51,7 @@
             // 
             this.buttonSelect.Location = new System.Drawing.Point(604, 60);
             this.buttonSelect.Name = "buttonSelect";
-            this.buttonSelect.Size = new System.Drawing.Size(164, 51);
+            this.buttonSelect.Size = new System.Drawing.Size(164, 42);
             this.buttonSelect.TabIndex = 0;
             this.buttonSelect.Text = "選択したアルバムを訂正";
             this.buttonSelect.UseVisualStyleBackColor = true;
@@ -87,9 +88,9 @@
             // 
             // buttonAll
             // 
-            this.buttonAll.Location = new System.Drawing.Point(604, 117);
+            this.buttonAll.Location = new System.Drawing.Point(604, 108);
             this.buttonAll.Name = "buttonAll";
-            this.buttonAll.Size = new System.Drawing.Size(164, 51);
+            this.buttonAll.Size = new System.Drawing.Size(164, 42);
             this.buttonAll.TabIndex = 7;
             this.buttonAll.Text = "全てのアルバムを訂正";
             this.buttonAll.UseVisualStyleBackColor = true;
@@ -192,11 +193,22 @@
             this.Artist.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Artist.Width = 250;
             // 
+            // buttonRemove
+            // 
+            this.buttonRemove.Location = new System.Drawing.Point(604, 190);
+            this.buttonRemove.Name = "buttonRemove";
+            this.buttonRemove.Size = new System.Drawing.Size(164, 30);
+            this.buttonRemove.TabIndex = 13;
+            this.buttonRemove.Text = "リストから除外";
+            this.buttonRemove.UseVisualStyleBackColor = true;
+            this.buttonRemove.Click += new System.EventHandler(this.buttonRemove_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(780, 437);
+            this.Controls.Add(this.buttonRemove);
             this.Controls.Add(this.labelProgress);
             this.Controls.Add(this.progressBarScan);
             this.Controls.Add(this.dataGridViewDetail);
@@ -233,6 +245,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NewTrack;
         private System.Windows.Forms.DataGridViewTextBoxColumn Title;
         private System.Windows.Forms.DataGridViewTextBoxColumn Artist;
+        private System.Windows.Forms.Button buttonRemove;
     }
 }
 

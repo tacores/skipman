@@ -17,7 +17,12 @@ namespace skipman
             set;
         }
 
-        bool AllAlbumButtunEnabled
+        bool AllAlbumButtonEnabled
+        {
+            set;
+        }
+
+        bool RemoveButtonEnabled
         {
             set;
         }

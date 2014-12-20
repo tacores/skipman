@@ -19,9 +19,6 @@ namespace skipman
         private FileSystem fileSystem;
         private FormConductor conductor;
 
-        /// <summary>
-        /// コンストラクタ
-        /// </summary>
         public Form1()
         {
             InitializeComponent();
@@ -263,11 +260,19 @@ namespace skipman
             }
         }
 
-        public bool AllAlbumButtunEnabled
+        public bool AllAlbumButtonEnabled
         {
             set
             {
                 setButtonEnable(buttonAll, value);
+            }
+        }
+
+        public bool RemoveButtonEnabled
+        {
+            set
+            {
+                setButtonEnable(buttonRemove, value);
             }
         }
 
@@ -330,6 +335,13 @@ namespace skipman
         private void updateButtons()
         {
             conductor.update();
+        }
+
+        private void buttonRemove_Click(object sender, EventArgs e)
+        {
+            string albumName = (string)listBoxAlbums.SelectedItem;
+            removeAlbumList(albumName);
+            updateButtons();
         }
     }
 }
