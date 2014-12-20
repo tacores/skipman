@@ -36,13 +36,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridViewDetail = new System.Windows.Forms.DataGridView();
+            this.progressBarScan = new System.Windows.Forms.ProgressBar();
+            this.labelProgress = new System.Windows.Forms.Label();
             this.Disc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Track = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NewTrack = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Artist = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.progressBarScan = new System.Windows.Forms.ProgressBar();
-            this.labelProgress = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetail)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +52,7 @@
             this.buttonSelect.Name = "buttonSelect";
             this.buttonSelect.Size = new System.Drawing.Size(164, 51);
             this.buttonSelect.TabIndex = 0;
-            this.buttonSelect.Text = "選択したアルバムを再採番";
+            this.buttonSelect.Text = "選択したアルバムを訂正";
             this.buttonSelect.UseVisualStyleBackColor = true;
             this.buttonSelect.Click += new System.EventHandler(this.buttonSelect_Click);
             // 
@@ -91,7 +91,7 @@
             this.buttonAll.Name = "buttonAll";
             this.buttonAll.Size = new System.Drawing.Size(164, 51);
             this.buttonAll.TabIndex = 7;
-            this.buttonAll.Text = "左の全アルバムを再採番";
+            this.buttonAll.Text = "全てのアルバムを訂正";
             this.buttonAll.UseVisualStyleBackColor = true;
             this.buttonAll.Click += new System.EventHandler(this.buttonAll_Click);
             // 
@@ -100,9 +100,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(10, 45);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(170, 12);
+            this.label2.Size = new System.Drawing.Size(186, 12);
             this.label2.TabIndex = 8;
-            this.label2.Text = "トラック番号が重複しているアルバム";
+            this.label2.Text = "曲順の訂正が必要と思われるアルバム";
             // 
             // label3
             // 
@@ -135,13 +135,30 @@
             this.dataGridViewDetail.TabIndex = 10;
             this.dataGridViewDetail.TabStop = false;
             // 
+            // progressBarScan
+            // 
+            this.progressBarScan.Location = new System.Drawing.Point(538, 12);
+            this.progressBarScan.Name = "progressBarScan";
+            this.progressBarScan.Size = new System.Drawing.Size(230, 23);
+            this.progressBarScan.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBarScan.TabIndex = 11;
+            // 
+            // labelProgress
+            // 
+            this.labelProgress.AutoSize = true;
+            this.labelProgress.Location = new System.Drawing.Point(547, 38);
+            this.labelProgress.Name = "labelProgress";
+            this.labelProgress.Size = new System.Drawing.Size(17, 12);
+            this.labelProgress.TabIndex = 12;
+            this.labelProgress.Text = "   ";
+            // 
             // Disc
             // 
             this.Disc.HeaderText = "ディスク";
             this.Disc.Name = "Disc";
             this.Disc.ReadOnly = true;
             this.Disc.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Disc.Width = 70;
+            this.Disc.Width = 50;
             // 
             // Track
             // 
@@ -149,7 +166,7 @@
             this.Track.Name = "Track";
             this.Track.ReadOnly = true;
             this.Track.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Track.Width = 70;
+            this.Track.Width = 50;
             // 
             // NewTrack
             // 
@@ -157,7 +174,7 @@
             this.NewTrack.Name = "NewTrack";
             this.NewTrack.ReadOnly = true;
             this.NewTrack.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.NewTrack.Width = 70;
+            this.NewTrack.Width = 50;
             // 
             // Title
             // 
@@ -173,24 +190,7 @@
             this.Artist.Name = "Artist";
             this.Artist.ReadOnly = true;
             this.Artist.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Artist.Width = 200;
-            // 
-            // progressBarScan
-            // 
-            this.progressBarScan.Location = new System.Drawing.Point(246, 12);
-            this.progressBarScan.Name = "progressBarScan";
-            this.progressBarScan.Size = new System.Drawing.Size(230, 23);
-            this.progressBarScan.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.progressBarScan.TabIndex = 11;
-            // 
-            // labelProgress
-            // 
-            this.labelProgress.AutoSize = true;
-            this.labelProgress.Location = new System.Drawing.Point(482, 17);
-            this.labelProgress.Name = "labelProgress";
-            this.labelProgress.Size = new System.Drawing.Size(17, 12);
-            this.labelProgress.TabIndex = 12;
-            this.labelProgress.Text = "   ";
+            this.Artist.Width = 250;
             // 
             // Form1
             // 

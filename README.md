@@ -13,8 +13,8 @@ skipman‚ÍAƒAƒ‹ƒoƒ€“à‚Å‚Ìƒgƒ‰ƒbƒN”Ô†‚ðˆêˆÓ‚É‘‚«Š·‚¦‚é‚±‚Æ‚ÅA1–‡–Ú‚Ìƒgƒ‰ƒbƒN1
 3. WindowsPC‚ÉANW-ZX1‚ðUSBƒXƒgƒŒ[ƒWON‚Ìó‘Ô‚ÅÚ‘±‚µ‚Ü‚·B
 4. skipman.exe‚ðƒ_ƒuƒ‹ƒNƒŠƒbƒN‚µ‚Ä‹N“®‚µ‚Ü‚·B
 5. uƒXƒLƒƒƒ“vƒ{ƒ^ƒ“‚ð‰Ÿ‚µ‚Ü‚·BƒXƒLƒƒƒ“‚É‚Í”•ªˆÈã‚ÌŽžŠÔ‚ª‚©‚©‚é‚Ì‚Å‹C’·‚É‘Ò‚Á‚Ä‚­‚¾‚³‚¢B
-6. •¡”–‡ƒAƒ‹ƒoƒ€‚ÆŽv‚í‚ê‚éƒAƒ‹ƒoƒ€‚ªˆê——•\Ž¦‚³‚ê‚Ü‚·BƒAƒ‹ƒoƒ€‚ð‘I‘ð‚·‚é‚ÆA‰º‚Ì—“‚É‹È‚ª•\Ž¦‚³‚ê‚Ü‚·B
-7. u‘I‘ð‚µ‚½ƒAƒ‹ƒoƒ€‚ðÄÌ”Ôv‚Ü‚½‚Íu¶‚Ì‘SƒAƒ‹ƒoƒ€‚ðÄÌ”Ôvƒ{ƒ^ƒ“‚ð‰Ÿ‚µ‚Ü‚·B  
+6. ‹È‡‚Ì’ù³‚ª•K—v‚ÆŽv‚í‚ê‚éƒAƒ‹ƒoƒ€‚ªˆê——•\Ž¦‚³‚ê‚Ü‚·BƒAƒ‹ƒoƒ€‚ð‘I‘ð‚·‚é‚ÆA‰º‚Ì—“‚É‹È‚ª•\Ž¦‚³‚ê‚Ü‚·B
+7. u‘I‘ð‚µ‚½ƒAƒ‹ƒoƒ€‚ð’ù³v‚Ü‚½‚Íu‘S‚Ä‚ÌƒAƒ‹ƒoƒ€‚ð’ù³vƒ{ƒ^ƒ“‚ð‰Ÿ‚µ‚Ü‚·B  
 ![‰æ–ÊƒLƒƒƒvƒ`ƒƒ](https://raw.githubusercontent.com/tacores/skipman/master/images/capture.png)
 
 # ŠÂ‹«
