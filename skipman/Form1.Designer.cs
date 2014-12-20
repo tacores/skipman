@@ -36,13 +36,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridViewDetail = new System.Windows.Forms.DataGridView();
-            this.progressBarScan = new System.Windows.Forms.ProgressBar();
-            this.labelProgress = new System.Windows.Forms.Label();
             this.Disc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Track = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NewTrack = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Artist = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.progressBarScan = new System.Windows.Forms.ProgressBar();
+            this.labelProgress = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetail)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,23 +135,6 @@
             this.dataGridViewDetail.TabIndex = 10;
             this.dataGridViewDetail.TabStop = false;
             // 
-            // progressBarScan
-            // 
-            this.progressBarScan.Location = new System.Drawing.Point(246, 12);
-            this.progressBarScan.Name = "progressBarScan";
-            this.progressBarScan.Size = new System.Drawing.Size(230, 23);
-            this.progressBarScan.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.progressBarScan.TabIndex = 11;
-            // 
-            // labelProgress
-            // 
-            this.labelProgress.AutoSize = true;
-            this.labelProgress.Location = new System.Drawing.Point(482, 17);
-            this.labelProgress.Name = "labelProgress";
-            this.labelProgress.Size = new System.Drawing.Size(17, 12);
-            this.labelProgress.TabIndex = 12;
-            this.labelProgress.Text = "   ";
-            // 
             // Disc
             // 
             this.Disc.HeaderText = "ディスク";
@@ -192,6 +175,23 @@
             this.Artist.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Artist.Width = 200;
             // 
+            // progressBarScan
+            // 
+            this.progressBarScan.Location = new System.Drawing.Point(246, 12);
+            this.progressBarScan.Name = "progressBarScan";
+            this.progressBarScan.Size = new System.Drawing.Size(230, 23);
+            this.progressBarScan.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBarScan.TabIndex = 11;
+            // 
+            // labelProgress
+            // 
+            this.labelProgress.AutoSize = true;
+            this.labelProgress.Location = new System.Drawing.Point(482, 17);
+            this.labelProgress.Name = "labelProgress";
+            this.labelProgress.Size = new System.Drawing.Size(17, 12);
+            this.labelProgress.TabIndex = 12;
+            this.labelProgress.Text = "   ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -207,6 +207,7 @@
             this.Controls.Add(this.labelFolder);
             this.Controls.Add(this.listBoxAlbums);
             this.Controls.Add(this.buttonSelect);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "skipman";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDetail)).EndInit();
