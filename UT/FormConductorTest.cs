@@ -14,7 +14,7 @@ namespace skipmanUT
     {
         private FormConductor sut;
         private StateProviderStub stateProvider;
-        private FormOwner formOwner;
+        private FormOwnerStub formOwner;
 
         [SetUp]
         public void Init()
@@ -32,5 +32,120 @@ namespace skipmanUT
             Assert.AreEqual(false, formOwner.ScanButtonEnabled);
         }
 
+        [Test]
+        public void InitialState_SelectedAlbumButtonDisabled()
+        {
+            sut.update();
+
+            Assert.AreEqual(false, formOwner.SelectedAlbumButtonEnabled);
+        }
+
+        [Test]
+        public void InitialState_AllAlbumButtonDisabled()
+        {
+            sut.update();
+
+            Assert.AreEqual(false, formOwner.AllAlbumButtunEnabled);
+        }
+
+        [Test]
+        public void AfterMusicFolderSet_ScanButtonEnabled()
+        {
+            stateProvider.IsMusicFolderSet = true;
+
+            sut.update();
+
+            Assert.AreEqual(true, formOwner.ScanButtonEnabled);
+        }
+
+        [Test]
+        public void IfScanIsRunning_ScanButtonDisabled()
+        {
+            stateProvider.IsMusicFolderSet = true;
+            stateProvider.IsScanning = true;
+
+            sut.update();
+
+            Assert.AreEqual(false, formOwner.ScanButtonEnabled);
+        }
+
+        [Test]
+        public void MusicFolderMecomesNotSet_ScanButtonDisabled()
+        {
+            //実際には起こらないケース
+            stateProvider.IsMusicFolderSet = true;
+            sut.update();
+
+            stateProvider.IsMusicFolderSet = false;
+            sut.update();
+
+            Assert.AreEqual(false, formOwner.ScanButtonEnabled);
+        }
+
+        [Test]
+        public void AlbumIsSelected_SelectedAlbumButtonEnabled()
+        {
+            stateProvider.IsAnyAlbumSelected = true;
+
+            sut.update();
+
+            Assert.AreEqual(true, formOwner.SelectedAlbumButtonEnabled);
+        }
+
+        [Test]
+        public void IfScanIsRunning_SelectedAlbumButtonDisabled()
+        {
+            stateProvider.IsAnyAlbumSelected = true;
+            stateProvider.IsScanning = true;
+
+            sut.update();
+
+            Assert.AreEqual(false, formOwner.SelectedAlbumButtonEnabled);
+        }
+
+        [Test]
+        public void BecomesNotSelected_SelectedAlbumButtonDisabled()
+        {
+            stateProvider.IsAnyAlbumSelected = true;
+            sut.update();
+
+            stateProvider.IsAnyAlbumSelected = false;
+            sut.update();
+
+            Assert.AreEqual(false, formOwner.SelectedAlbumButtonEnabled);
+        }
+        
+        [Test]
+        public void ThereIsAnyAlbums_AllAlbumButtonEnabled()
+        {
+            stateProvider.IsThrereAnyAlbumNeedToReset = true;
+
+            sut.update();
+
+            Assert.AreEqual(true, formOwner.AllAlbumButtunEnabled);
+        }
+
+        [Test]
+        public void IfScanIsRunning_AllAlbumButtonDisabled()
+        {
+            stateProvider.IsThrereAnyAlbumNeedToReset = true;
+            stateProvider.IsScanning = true;
+
+            sut.update();
+
+            Assert.AreEqual(false, formOwner.AllAlbumButtunEnabled);
+        }
+
+        [Test]
+        public void BecomesThereIsNoAlbum_AllAlbumButtonDisabled()
+        {
+            stateProvider.IsThrereAnyAlbumNeedToReset = true;
+            sut.update();
+
+            stateProvider.IsThrereAnyAlbumNeedToReset = false;
+            sut.update();
+
+            Assert.AreEqual(false, formOwner.AllAlbumButtunEnabled);
+        }
     }
 }

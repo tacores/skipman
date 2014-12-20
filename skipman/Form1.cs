@@ -13,10 +13,11 @@ namespace skipman
     /// <summary>
     /// メインダイアログ
     /// </summary>
-    public partial class Form1 : Form, ProgressListener
+    public partial class Form1 : Form, ProgressListener, StateProvider, FormOwner
     {
         private Dictionary<string, Album> albums;
         private FileSystem fileSystem;
+        private FormConductor conductor;
 
         /// <summary>
         /// コンストラクタ
@@ -26,8 +27,10 @@ namespace skipman
             InitializeComponent();
 
             fileSystem = new FileSystemImpl();
+            conductor = new FormConductor(this, this);
 
             searchWalkmanDrive();
+            updateButtons();
         }
 
         /// <summary>
@@ -62,10 +65,15 @@ namespace skipman
         /// </summary>
         private void scanMusicFolder()
         {
+            IsScanning = true;
+            updateButtons();
+
             string[] files = fileSystem.getAllFileNames(labelFolder.Text);
             albums = new AlbumDictionaryCreatorImpl(this).create(files);
 
             updateAlbumList();
+            IsScanning = false;
+            updateButtons();
         }
 
         delegate void delegateVoidVoid();
@@ -103,6 +111,7 @@ namespace skipman
         private void listBoxAlbums_SelectedIndexChanged(object sender, EventArgs e)
         {
             dataGridViewDetail.Rows.Clear();
+            updateButtons();
 
             string albumName = (string)listBoxAlbums.SelectedItem;
             if (albumName == null)
@@ -209,6 +218,103 @@ namespace skipman
         {
             labelProgress.Text = "(" + done + "/" + all + ")";
             labelProgress.Update();
+        }
+
+        private delegate void delegateSetButtonEnable(Button btn, bool enable);
+        private void setButtonEnable(Button btn, bool enable)
+        {
+            if (this.InvokeRequired)
+            {
+                delegateSetButtonEnable dlg = new delegateSetButtonEnable(setButtonEnable);
+                this.Invoke(dlg, btn, enable);
+                return;
+            }
+            btn.Enabled = enable;
+        }
+
+        public bool ScanButtonEnabled
+        {
+            set
+            {
+                setButtonEnable(buttonAnalyze, value);
+            }
+        }
+
+        public bool SelectedAlbumButtonEnabled
+        {
+            set
+            {
+                setButtonEnable(buttonSelect, value);
+            }
+        }
+
+        public bool AllAlbumButtunEnabled
+        {
+            set
+            {
+                setButtonEnable(buttonAll, value);
+            }
+        }
+
+        public bool IsMusicFolderSet
+        {
+            get
+            {
+                return true;
+            }
+        }
+
+        public bool IsScanning
+        {
+            get;
+            set;
+        }
+
+        public bool IsAnyAlbumSelected
+        {
+            get
+            {
+                string albumName = getSelectedAlbumName();
+                if (albumName == null)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+        }
+
+        private delegate string delegateGetSelectedAlbumName();
+        private string getSelectedAlbumName()
+        {
+            if (this.InvokeRequired)
+            {
+                delegateGetSelectedAlbumName dlg = new delegateGetSelectedAlbumName(getSelectedAlbumName);
+                return (string)this.Invoke(dlg);
+            }
+            return (string)listBoxAlbums.SelectedItem;
+        }
+
+        public bool IsThrereAnyAlbumNeedToReset
+        {
+            get
+            {
+                if (listBoxAlbums.Items.Count == 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+        }
+
+        private void updateButtons()
+        {
+            conductor.update();
         }
     }
 }

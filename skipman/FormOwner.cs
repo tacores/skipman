@@ -9,19 +9,16 @@ namespace skipman
     {
         bool ScanButtonEnabled
         {
-            get;
             set;
         }
 
         bool SelectedAlbumButtonEnabled
         {
-            get;
             set;
         }
 
         bool AllAlbumButtunEnabled
         {
-            get;
             set;
         }
     }
