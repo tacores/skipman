@@ -141,10 +141,17 @@ namespace skipman
         /// <param name="e"></param>
         private void buttonSelect_Click(object sender, EventArgs e)
         {
-            string albumName = (string)listBoxAlbums.SelectedItem;
-            overwriteAlbum(albumName);
-            removeAlbumList(albumName);
-            MessageBox.Show("完了しました");
+            try
+            {
+                string albumName = (string)listBoxAlbums.SelectedItem;
+                overwriteAlbum(albumName);
+                removeAlbumList(albumName);
+                MessageBox.Show("完了しました");
+            }
+            catch(System.IO.DirectoryNotFoundException)
+            {
+                MessageBox.Show("ディレクトリが見つかりませんでした。\nウォークマンの接続を確認してください。");
+            }
         }
 
         /// <summary>
@@ -154,12 +161,19 @@ namespace skipman
         /// <param name="e"></param>
         private void buttonAll_Click(object sender, EventArgs e)
         {
-            foreach (string albumName in listBoxAlbums.Items)
+            try
             {
-                overwriteAlbum(albumName);
-                removeAlbumList(albumName);
+                foreach (string albumName in listBoxAlbums.Items)
+                {
+                    overwriteAlbum(albumName);
+                    removeAlbumList(albumName);
+                }
+                MessageBox.Show("全て完了しました");
             }
-            MessageBox.Show("全て完了しました");
+            catch (System.IO.DirectoryNotFoundException)
+            {
+                MessageBox.Show("ディレクトリが見つかりませんでした。\nウォークマンの接続を確認してください。");
+            }
         }
 
         /// <summary>
@@ -174,7 +188,7 @@ namespace skipman
                 Album album = albums[albumName];
                 resetter.reset(album);
             }
-            catch (Exception )
+            catch (Exception)
             {
                 MessageBox.Show(albumName + " を処理中にエラーが発生しました");
                 throw;
