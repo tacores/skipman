@@ -126,7 +126,10 @@ namespace skipman
                 for (uint j = 1; disc != null && j <= disc.TrackCount; ++j)
                 {
                     Track track = disc.getTrack(j);
-                    dataGridViewDetail.Rows.Add(disc.DiskNum, track.TrackNum, newTrack++, track.Title, track.Artist);
+                    if (track != null)
+                    {
+                        dataGridViewDetail.Rows.Add(disc.DiskNum, track.TrackNum, newTrack++, track.Title, track.Artist);
+                    }
                 }
             }
         }
