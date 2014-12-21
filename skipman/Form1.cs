@@ -158,18 +158,25 @@ namespace skipman
         /// <param name="e"></param>
         private void buttonAll_Click(object sender, EventArgs e)
         {
+            List<string> removeList = new List<string>();
             try
             {
                 foreach (string albumName in listBoxAlbums.Items)
                 {
                     overwriteAlbum(albumName);
-                    removeAlbumList(albumName);
+                    //直接削除すると、イテレータが無効になり例外が出る
+                    removeList.Add(albumName);
                 }
                 MessageBox.Show("全て完了しました");
             }
             catch (System.IO.DirectoryNotFoundException)
             {
                 MessageBox.Show("ディレクトリが見つかりませんでした。\nウォークマンの接続を確認してください。");
+            }
+
+            foreach (string albumName in removeList)
+            {
+                removeAlbumList(albumName);
             }
         }
 
