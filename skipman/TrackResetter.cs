@@ -32,6 +32,7 @@ namespace skipman
                     using (MusicTag tagFile = MusicTagFactory.create(track.FilePath))
                     {
                         tagFile.Track = newTrack++;
+                        tagFile.TrackCount = album.AllTrackCount;
                         tagFile.save();
                     }
                 }

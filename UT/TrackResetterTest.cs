@@ -104,5 +104,21 @@ namespace skipmanUT
             Assert.AreEqual(2, MusicTagStub.pathTrackDictionary["1-10"]);
         }
 
+        [Test]
+        public void TrackCount_SetAllCount()
+        {
+            Album album = new Album("title", 2);
+            album.addTrack(1, 1, 2, "", "1-1", "");
+            album.addTrack(1, 2, 2, "", "1-2", "");
+            album.addTrack(2, 1, 2, "", "2-1", "");
+            album.addTrack(2, 2, 2, "", "2-2", "");
+
+            sut.reset(album);
+
+            Assert.AreEqual(4, MusicTagStub.pathTrackCountDictionary["1-1"]);
+            Assert.AreEqual(4, MusicTagStub.pathTrackCountDictionary["1-2"]);
+            Assert.AreEqual(4, MusicTagStub.pathTrackCountDictionary["2-1"]);
+            Assert.AreEqual(4, MusicTagStub.pathTrackCountDictionary["2-2"]);
+        }
     }
 }
