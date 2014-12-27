@@ -22,7 +22,6 @@ namespace skipman
         public Form1()
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
 
             fileSystem = new FileSystemImpl();
             conductor = new FormConductor(this, this);
